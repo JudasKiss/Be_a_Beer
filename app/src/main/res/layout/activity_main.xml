@@ -33,4 +33,12 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="476dp" />
 
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="606dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
