@@ -10,8 +10,15 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="41dp">
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="435dp"
+            android:layout_height="wrap_content"
+            android:text="장미나" />
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -26,6 +33,6 @@
         app:itemIconTint="@drawable/item_color"
         app:itemTextColor="@drawable/item_color"
         app:menu="@menu/menu_bottom"/>
-    
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
