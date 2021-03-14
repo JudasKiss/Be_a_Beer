@@ -26,23 +26,6 @@
         app:itemIconTint="@drawable/item_color"
         app:itemTextColor="@drawable/item_color"
         app:menu="@menu/menu_bottom"/>
-
-<<<<<<< HEAD
-=======
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="93dp" />
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="93dp" />
->>>>>>> 29888b12cd8ac40874f868b3e27766d09c3c0c0a
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>
