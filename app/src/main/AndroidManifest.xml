@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Beer">
-        <activity android:name=".RankingActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RankingActivity" />
         <activity android:name=".HistoryActivity" />
         <activity android:name=".rankingActivity" />
         <activity android:name=".MainActivity">
