@@ -77,8 +77,8 @@
             android:layout_height="48dp"
             android:text="비회원이용"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.432"
+            app:layout_constraintHorizontal_bias="0.557"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="280dp" />
+            tools:layout_editor_absoluteY="277dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
