@@ -10,14 +10,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="359dp"
+        android:layout_height="291dp"
         android:layout_weight="1">
 
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="295dp"
+            android:layout_height="274dp"
             android:layout_marginStart="57dp"
             android:layout_marginLeft="57dp"
             android:layout_marginEnd="57dp"
@@ -64,9 +64,6 @@
             android:inputType="textPersonName"
             android:text="ID를 입력해주세요."
             android:textColor="#FFFFFF"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:textColorLink="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/noidea2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -98,19 +95,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.239"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/login" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/noidea"
             android:layout_width="115dp"
-            android:layout_height="48dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="48dp"
             android:shadowColor="#FFFFFF"
             android:text="회원가입"
             app:backgroundTint="#7C5050"
-            app:layout_constraintBaseline_toBaselineOf="@+id/noidea2"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.736"
+            app:layout_constraintHorizontal_bias="0.726"
             app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
