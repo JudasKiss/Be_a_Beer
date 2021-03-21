@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "230341394295",
+    "project_id": "be-a-beer",
+    "storage_bucket": "be-a-beer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230341394295:android:cb74636b47f1030f902b72",
+        "android_client_info": {
+          "package_name": "com.cookandroid.beer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230341394295-q9hio8pt3n497njcm5q6ppd5ll4bi18n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cookandroid.beer",
+            "certificate_hash": "bd9bee3877a0a04862be53caf9377d930573823f"
+          }
+        },
+        {
+          "client_id": "230341394295-mtk9gerjqmmgbkpbtdks5i8kfuor5qam.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXhKKkrfFqvF_TgH2bknZ_m2S9qz9phMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230341394295-mtk9gerjqmmgbkpbtdks5i8kfuor5qam.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
