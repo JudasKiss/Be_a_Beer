@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dpurple"
     tools:context=".RegisterActivity">
 
     <LinearLayout
@@ -15,184 +14,120 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/dpurple">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:text="회원 가입"
                 android:textColor="#ffffff"
                 android:textSize="30dp"
                 android:textStyle="bold"
-                tools:textColor="@color/yellow" />
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
             <EditText
-                android:id="@+id/idText"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-<<<<<<< Updated upstream
-                android:layout_gravity="center"
-=======
-                android:hint=" 닉네임"
+                android:hint="닉네임"
                 android:layout_gravity="center"
                 android:padding="10dp"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
                 android:id="@+id/nameText"
->>>>>>> Stashed changes
                 android:layout_marginTop="50dp"
-                android:hint="아이디"
-                android:padding="10dp"
-                android:textColor="@color/yellow"
-                android:textColorHint="@color/yellow" />
-
-            <EditText
-<<<<<<< Updated upstream
-                android:id="@+id/passwordText"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-=======
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:hint=" 아이디"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
-                android:id="@+id/emailText"
-                android:layout_marginTop="10dp"
-                android:background="@color/brown"/>
+                android:background="@color/dpurple"/>
 
             <EditText
                 android:inputType="textPassword"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:hint=" 비밀번호 "
->>>>>>> Stashed changes
+                android:hint="아이디 "
                 android:layout_gravity="center"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:id="@+id/idText"
                 android:layout_marginTop="10dp"
+                android:background="@color/dpurple"/>
+            <EditText
+                android:inputType="textPassword"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
                 android:hint="비밀번호 "
-                android:inputType="textPassword"
-                android:padding="10dp"
-                android:textColor="@color/yellow"
-                android:textColorHint="@color/yellow" />
-
-            <EditText
-<<<<<<< Updated upstream
-                android:id="@+id/emailText"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:hint="이메일"
-                android:padding="10dp"
-                android:textColor="@color/yellow"
-                android:textColorHint="@color/yellow" />
-
-            <RadioGroup
-                android:id="@+id/genderGroup"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/genderMan"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    android:text="남성"
-                    android:textColor="@color/yellow" />
-
-                <RadioButton
-                    android:id="@+id/genderWoman"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="여성"
-                    android:textColor="@color/yellow" />
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/registerButton"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:shadowColor="@color/purple"
-                android:text="가입하기"
-                android:textColor="@color/yellow"
-=======
-                android:inputType="textPassword"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:hint=" 비밀번호 확인"
                 android:layout_gravity="center"
                 android:padding="10dp"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
-                android:id="@+id/passwordText2"
+                android:id="@+id/passwordText"
                 android:layout_marginTop="10dp"
-                android:background="@color/brown"/>
+                android:background="@color/dpurple"/>
+
+            <EditText
+                android:inputType="textPassword"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint="비밀번호확인 "
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:id="@+id/password2Text"
+                android:layout_marginTop="10dp"
+                android:background="@color/dpurple"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="생년월일"
-                android:textSize="20dp"
-                android:textColor="@color/brown"
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center"/>
+                android:text="생년월일"
+                android:textColor="@color/dpurple"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <Spinner
                 android:id="@+id/yearSpinner"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"/>
-
+                android:layout_marginTop="10dp" />
             <Spinner
                 android:id="@+id/monthSpinner"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"/>
-
+                android:layout_marginTop="10dp" />
             <Spinner
                 android:id="@+id/daySpinner"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"/>
-
+                android:layout_marginTop="10dp" />
 
             <Button
-                android:id="@+id/registerButton"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@color/brown"
-                android:text="가입하기"
-                android:textColor="#ffffff"
->>>>>>> Stashed changes
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:background="@color/dpurple"
+                android:text="가입하기"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:id="@+id/registerButton"/>
+
+
 
 
         </LinearLayout>
     </LinearLayout>
+
 
 
 </RelativeLayout>

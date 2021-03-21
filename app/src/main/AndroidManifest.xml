@@ -14,13 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Beer">
-<<<<<<< Updated upstream
+
         <activity android:name=".KindsRecommend"></activity>
         <activity android:name=".NationRecommend" />
         <activity android:name=".RecommendBeer" />
-=======
+
         <activity android:name=".User"></activity>
->>>>>>> Stashed changes
+
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RankingActivity" />
         <activity android:name=".HistoryActivity" />
@@ -31,19 +31,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< Updated upstream
+
         <activity android:name=".MainActivity" />
-=======
->>>>>>> Stashed changes
+
         <activity
             android:name=".CaptureAct"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
-<<<<<<< Updated upstream
+
             android:windowSoftInputMode="stateAlwaysHidden" />
-=======
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
->>>>>>> Stashed changes
+
+
     </application>
 
 </manifest>
