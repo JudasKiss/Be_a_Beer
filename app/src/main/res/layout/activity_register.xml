@@ -39,7 +39,16 @@
                 android:id="@+id/idText"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
+<<<<<<< Updated upstream
                 android:layout_gravity="center"
+=======
+                android:hint=" 닉네임"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:id="@+id/nameText"
+>>>>>>> Stashed changes
                 android:layout_marginTop="50dp"
                 android:hint="아이디"
                 android:padding="10dp"
@@ -47,9 +56,28 @@
                 android:textColorHint="@color/yellow" />
 
             <EditText
+<<<<<<< Updated upstream
                 android:id="@+id/passwordText"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
+=======
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint=" 아이디"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:id="@+id/emailText"
+                android:layout_marginTop="10dp"
+                android:background="@color/brown"/>
+
+            <EditText
+                android:inputType="textPassword"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint=" 비밀번호 "
+>>>>>>> Stashed changes
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:hint="비밀번호 "
@@ -59,6 +87,7 @@
                 android:textColorHint="@color/yellow" />
 
             <EditText
+<<<<<<< Updated upstream
                 android:id="@+id/emailText"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
@@ -104,6 +133,60 @@
                 android:shadowColor="@color/purple"
                 android:text="가입하기"
                 android:textColor="@color/yellow"
+=======
+                android:inputType="textPassword"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint=" 비밀번호 확인"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:id="@+id/passwordText2"
+                android:layout_marginTop="10dp"
+                android:background="@color/brown"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="생년월일"
+                android:textSize="20dp"
+                android:textColor="@color/brown"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"/>
+
+            <Spinner
+                android:id="@+id/yearSpinner"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <Spinner
+                android:id="@+id/monthSpinner"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <Spinner
+                android:id="@+id/daySpinner"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
+
+
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/brown"
+                android:text="가입하기"
+                android:textColor="#ffffff"
+>>>>>>> Stashed changes
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
