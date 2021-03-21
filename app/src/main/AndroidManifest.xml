@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Beer">
-        <activity android:name=".RecommendBeer"></activity>
+        <activity android:name=".KindsRecommend"></activity>
+        <activity android:name=".NationRecommend" />
+        <activity android:name=".RecommendBeer" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RankingActivity" />
         <activity android:name=".HistoryActivity" />
@@ -30,7 +32,7 @@
             android:name=".CaptureAct"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>

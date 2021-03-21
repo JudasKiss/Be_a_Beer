@@ -16,49 +16,45 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3">
+            android:layout_weight="4">
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="222dp"
-                android:layout_height="198dp"
-                android:text="맥주 정보 예정"
+                android:id="@+id/textView5"
+                android:layout_width="203dp"
+                android:layout_height="120dp"
+                android:text="국가소개 예정"
                 android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.567" />
+                tools:layout_editor_absoluteY="110dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="5"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/editTextFilter"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/round_corner"
+                android:hint="검색"
+                android:inputType="text"
+                android:lines="1"
+                android:textSize="16dp" />
+            <ListView
+                android:id="@+id/listView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/editTextFilter"
+                android:layout_marginTop="10dp"
+                android:textFilterEnabled="true" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="133dp"
-                android:layout_height="91dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginRight="48dp"
-                android:text="국가별맥주추천"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/button2"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.506" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="133dp"
-                android:layout_height="91dp"
-                android:text="종류별 맥주추천"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.506"
-                tools:layout_editor_absoluteX="220dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -66,6 +62,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical">
+
 
         <LinearLayout
             android:layout_width="match_parent"
