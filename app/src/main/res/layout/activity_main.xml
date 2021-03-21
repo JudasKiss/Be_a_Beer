@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dpurple"
     android:orientation="vertical"
-    android:background="@color/brown"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,14 +38,15 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="24dp"
             android:text="Feeling Beer"
-            android:textColor="@color/white"
+            android:textColor="@color/yellow"
             android:textSize="50sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.637"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.073" />
+            app:layout_constraintVertical_bias="0.073"
+            tools:textStyle="italic" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -63,7 +64,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="ID를 입력해주세요."
-            android:textColor="#FFFFFF"
+            android:textColor="@color/yellow"
             app:layout_constraintBottom_toTopOf="@+id/noidea2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -78,7 +79,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="비밀번호를 입력해주세요."
-            android:textColor="#FFFFFF"
+            android:textColor="@color/yellow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
@@ -89,26 +90,30 @@
             android:layout_width="115dp"
             android:layout_height="0dp"
             android:layout_marginBottom="50dp"
-            android:shadowColor="#FFFFFF"
+            android:shadowColor="@color/yellow"
             android:text="로그인"
-            app:backgroundTint="#7C5050"
+            android:textSize="18sp"
+            app:backgroundTint="@color/purple"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.239"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:textStyle="bold" />
 
         <Button
             android:id="@+id/noidea"
             android:layout_width="115dp"
             android:layout_height="0dp"
             android:layout_marginBottom="48dp"
-            android:shadowColor="#FFFFFF"
+            android:shadowColor="@color/yellow"
             android:text="회원가입"
-            app:backgroundTint="#7C5050"
+            android:textSize="18sp"
+            app:backgroundTint="@color/purple"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.726"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:textStyle="bold" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

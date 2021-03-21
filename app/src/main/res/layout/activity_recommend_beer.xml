@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dpurple"
     android:orientation="vertical"
     tools:context=".rankingActivity">
 
@@ -20,15 +21,18 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="222dp"
-                android:layout_height="198dp"
+                android:layout_width="254dp"
+                android:layout_height="54dp"
                 android:text="맥주 정보 예정"
+                android:textColor="@color/yellow"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.745"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.567" />
+                app:layout_constraintVertical_bias="0.238"
+                tools:textStyle="bold" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,25 +42,32 @@
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="133dp"
-                android:layout_height="91dp"
+                android:layout_width="162dp"
+                android:layout_height="64dp"
                 android:layout_marginEnd="48dp"
                 android:layout_marginRight="48dp"
                 android:text="국가별맥주추천"
+                android:textColor="@color/yellow"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/button2"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.506" />
+                app:layout_constraintVertical_bias="0.506"
+                tools:shadowColor="@color/purple"
+                tools:textStyle="bold" />
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="133dp"
-                android:layout_height="91dp"
+                android:layout_width="172dp"
+                android:layout_height="64dp"
+                android:shadowColor="@color/purple"
                 android:text="종류별 맥주추천"
+                android:textColor="@color/yellow"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.506"
-                tools:layout_editor_absoluteX="220dp" />
+                tools:layout_editor_absoluteX="240dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

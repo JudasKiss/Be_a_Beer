@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dpurple"
     android:orientation="vertical"
     tools:context=".rankingActivity">
 
@@ -20,13 +21,15 @@
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="203dp"
-                android:layout_height="120dp"
+                android:layout_width="269dp"
+                android:layout_height="66dp"
                 android:text="맥주 종류 소개 예정"
+                android:textColor="@color/yellow"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="110dp" />
+                tools:layout_editor_absoluteY="110dp"
+                tools:textStyle="bold" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
@@ -34,6 +37,7 @@
             android:layout_height="0dp"
             android:layout_weight="5"
             android:orientation="vertical">
+
             <EditText
                 android:id="@+id/editTextFilter"
                 android:layout_width="match_parent"
@@ -46,6 +50,7 @@
                 android:inputType="text"
                 android:lines="1"
                 android:textSize="16dp" />
+
             <ListView
                 android:id="@+id/listView1"
                 android:layout_width="match_parent"
