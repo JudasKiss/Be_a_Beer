@@ -26,9 +26,10 @@
                 android:text="맥주 종류 소개 예정"
                 android:textColor="@color/yellow"
                 android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="110dp"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:textStyle="bold" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
