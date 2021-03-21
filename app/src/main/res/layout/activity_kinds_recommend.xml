@@ -77,23 +77,24 @@
 
             <ImageButton
                 android:id="@+id/imageButton"
-                android:layout_width="142dp"
+                android:layout_width="140dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/ranking" />
+                android:layout_weight="1"
+                android:background="@drawable/crown" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
                 android:layout_width="142dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/history" />
+                android:background="@drawable/history" />
 
             <ImageButton
                 android:id="@+id/imageButton3"
                 android:layout_width="142dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/camera" />
+                android:background="@drawable/camera" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

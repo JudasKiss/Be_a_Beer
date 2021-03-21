@@ -26,11 +26,16 @@
                 android:text="국가소개 예정"
                 android:textColor="@color/yellow"
                 android:textSize="30sp"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:textStyle="bold" />
+
+                tools:layout_editor_absoluteX="141dp"
+                tools:layout_editor_absoluteY="116dp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
@@ -77,23 +82,24 @@
 
             <ImageButton
                 android:id="@+id/imageButton"
-                android:layout_width="142dp"
+                android:layout_width="140dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/ranking" />
+                android:layout_weight="1"
+                android:background="@drawable/crown" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
                 android:layout_width="142dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/history" />
+                android:background="@drawable/history" />
 
             <ImageButton
                 android:id="@+id/imageButton3"
                 android:layout_width="142dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/camera" />
+                android:background="@drawable/camera" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
