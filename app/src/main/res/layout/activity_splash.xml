@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#775643">
+    android:background="@color/brown">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -29,10 +29,11 @@
         android:layout_marginRight="57dp"
         android:layout_marginBottom="121dp"
         android:text="FeelingBeer"
+        android:textColor="@color/white"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
