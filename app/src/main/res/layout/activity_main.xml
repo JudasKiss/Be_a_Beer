@@ -37,7 +37,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="24dp"
-            android:text="난 소주좋아"
+            android:text="Feeling Beer"
             android:textColor="@color/white"
             android:textSize="50sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView"
