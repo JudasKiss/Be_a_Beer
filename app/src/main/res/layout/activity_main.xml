@@ -90,7 +90,7 @@
             android:layout_height="0dp"
             android:layout_marginBottom="50dp"
             android:shadowColor="#FFFFFF"
-            android:text="폭발"
+            android:text="로그안"
             app:backgroundTint="#7C5050"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
