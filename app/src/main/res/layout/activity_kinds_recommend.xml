@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dpurple"
+    android:background="#FF22113A"
     android:orientation="vertical"
     tools:context=".rankingActivity">
 
@@ -58,10 +58,20 @@
                 android:layout_height="match_parent"
                 android:layout_below="@id/editTextFilter"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner"
                 android:textFilterEnabled="true" />
 
         </LinearLayout>
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="82dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="148dp"
+        android:layout_weight="1"
+        android:background="@drawable/camera"
+        android:tint="#673AB7" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,32 +79,17 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-
-        <LinearLayout
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_alignParentBottom="true"
+            android:background="#FF22113A"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:menu="@menu/menu_navigation">
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/crown" />
 
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="142dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/history" />
-
-            <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="142dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/camera" />
-        </LinearLayout>
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
     </LinearLayout>
 </LinearLayout>

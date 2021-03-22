@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dpurple"
+    android:background="#FF22113A"
     android:orientation="vertical"
     tools:context=".rankingActivity">
 
@@ -55,6 +55,7 @@
                     android:layout_marginRight="10dp"
                     android:background="@drawable/round_corner"
                     android:hint="검색"
+                    android:textColor="#ffffff"
                     android:inputType="text"
                     android:lines="1"
                     android:textSize="16dp" />
@@ -77,10 +78,11 @@
             android:id="@+id/imageButton3"
             android:layout_width="82dp"
             android:layout_height="28dp"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="148dp"
             android:layout_weight="1"
             android:background="@drawable/camera"
             android:tint="#673AB7" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -92,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
-                android:background="#009688"
+                android:background="#FF22113A"
                 app:itemIconTint="@drawable/selector"
                 app:itemTextColor="@drawable/selector"
                 app:menu="@menu/menu_navigation" />

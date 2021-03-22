@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dpurple"
+    android:background="#FF22113A"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="291dp"
         android:layout_weight="1">
-
 
 
         <ImageView
@@ -94,7 +93,7 @@
             android:shadowColor="@color/yellow"
             android:text="로그인"
             android:textSize="18sp"
-            app:backgroundTint="@color/purple"
+            app:backgroundTint="#7A5A1BAE"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.239"
@@ -111,14 +110,13 @@
             android:text="회원가입"
             android:textColor="@color/yellow"
             android:textSize="18sp"
-            app:backgroundTint="@color/purple"
+            app:backgroundTint="#7A5A1BAE"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.745"
             app:layout_constraintStart_toStartOf="parent"
             tools:textStyle="bold" />
 
-        
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

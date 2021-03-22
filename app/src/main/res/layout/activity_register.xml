@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF22113A"
     tools:context=".RegisterActivity">
 
     <LinearLayout
@@ -14,82 +15,84 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/dpurple">
+            android:background="@color/dpurple"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="회원 가입"
                 android:textColor="#ffffff"
                 android:textSize="30dp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <EditText
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:hint="닉네임"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
                 android:id="@+id/nameText"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="50dp"
-                android:background="@color/dpurple"/>
-
-            <EditText
-                android:inputType="textPassword"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:hint="아이디 "
-                android:layout_gravity="center"
+                android:background="@drawable/round_corner"
+                android:hint="닉네임"
                 android:padding="10dp"
                 android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#ffffff" />
+
+            <EditText
                 android:id="@+id/idText"
-                android:layout_marginTop="10dp"
-                android:background="@color/dpurple"/>
-            <EditText
-                android:inputType="textPassword"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:hint="비밀번호 "
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner"
+                android:hint="아이디 "
+                android:inputType="textPassword"
                 android:padding="10dp"
                 android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
-                android:id="@+id/passwordText"
-                android:layout_marginTop="10dp"
-                android:background="@color/dpurple"/>
+                android:textColorHint="#ffffff" />
 
             <EditText
-                android:inputType="textPassword"
+                android:id="@+id/passwordText"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:hint="비밀번호확인 "
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner"
+                android:hint="비밀번호 "
+                android:inputType="textPassword"
                 android:padding="10dp"
                 android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#ffffff" />
+
+            <EditText
                 android:id="@+id/password2Text"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="@color/dpurple"/>
+                android:background="@drawable/round_corner"
+                android:hint="비밀번호확인 "
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:text="생년월일"
-                android:textColor="@color/dpurple"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textColor="@color/dpurple" />
 
             <Spinner
                 android:id="@+id/yearSpinner"
@@ -97,12 +100,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp" />
+
             <Spinner
                 android:id="@+id/monthSpinner"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp" />
+
             <Spinner
                 android:id="@+id/daySpinner"
                 android:layout_width="280dp"
@@ -111,23 +116,21 @@
                 android:layout_marginTop="10dp" />
 
             <Button
+                android:id="@+id/registerButton"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner"
+                android:text="가입하기"
+                android:textColor="#ffffff"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:textColor="#ffffff"
-                android:background="@color/dpurple"
-                android:text="가입하기"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center"
-                android:id="@+id/registerButton"/>
-
-
+                app:backgroundTint="#FF2B1845" />
 
 
         </LinearLayout>
     </LinearLayout>
-
 
 
 </RelativeLayout>
