@@ -65,33 +65,38 @@
 
                 <EditText
                     android:id="@+id/editTextFilter"
-                    android:layout_width="408dp"
+                    android:layout_width="match_parent"
                     android:layout_height="34dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginRight="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/round_corner"
                     android:hint="검색"
                     android:inputType="text"
                     android:lines="1"
+                    android:textColor="@color/black"
                     android:textSize="16dp" />
 
                 <ListView
                     android:id="@+id/listView1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@id/editTextFilter"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/round_corner"
                     android:textFilterEnabled="true">
 
                 </ListView>
 
             </LinearLayout>
         </LinearLayout>
+
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="82dp"
             android:layout_height="28dp"
+            android:layout_marginLeft="150dp"
             android:layout_weight="1"
             android:background="@drawable/camera"
             android:tint="#673AB7" />
