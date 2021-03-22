@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,92 +10,90 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="11"
+        android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="207dp"
-                android:layout_height="40dp"
-                android:text="지난주 TOP 10"
-                android:textColor="@color/yellow"
-                android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.563"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.496"
-                tools:textStyle="bold" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5"
+            android:layout_weight="11"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editTextFilter"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="34dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:background="@drawable/round_corner"
-                android:hint="검색"
-                android:inputType="text"
-                android:lines="1"
-                android:textSize="16dp" />
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
-            <ListView
-                android:id="@+id/listView1"
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="207dp"
+                    android:layout_height="40dp"
+                    android:text="지난주 TOP 10"
+                    android:textColor="@color/yellow"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.563"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.496"
+                    tools:textStyle="bold" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/editTextFilter"
-                android:layout_marginTop="10dp"
-                android:textFilterEnabled="true" />
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:orientation="vertical">
 
+                <EditText
+                    android:id="@+id/editTextFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:background="@drawable/round_corner"
+                    android:hint="검색"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:textSize="16dp" />
+
+                <ListView
+                    android:id="@+id/listView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/editTextFilter"
+                    android:layout_marginTop="10dp"
+                    android:textFilterEnabled="true" />
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="82dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:background="@drawable/camera"
+            android:tint="#673AB7" />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="140dp"
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/crown" />
+                android:layout_alignParentBottom="true"
+                android:background="#009688"
+                app:itemIconTint="@drawable/selector"
+                app:itemTextColor="@drawable/selector"
+                app:menu="@menu/menu_navigation" />
 
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="142dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/history" />
-
-            <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="142dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/camera" />
         </LinearLayout>
+
     </LinearLayout>
-</LinearLayout>
+
+</RelativeLayout>
