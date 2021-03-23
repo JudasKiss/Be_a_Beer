@@ -92,28 +92,33 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:text="생년월일"
-                android:textColor="@color/dpurple" />
+                android:textColor="@color/white"
+                android:textSize="24sp" />
 
             <Spinner
                 android:id="@+id/yearSpinner"
                 android:layout_width="280dp"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner"
+                android:dropDownSelector="@color/white" />
 
             <Spinner
                 android:id="@+id/monthSpinner"
                 android:layout_width="280dp"
-                android:layout_height="wrap_content"
+                android:layout_height="29dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner" />
 
             <Spinner
                 android:id="@+id/daySpinner"
                 android:layout_width="280dp"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner" />
 
             <Button
                 android:id="@+id/registerButton"
