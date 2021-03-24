@@ -55,7 +55,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/round_corner"
                 android:hint="아이디 "
-                android:inputType="textPassword"
+                android:inputType="textEmailAddress"
                 android:padding="10dp"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff" />
