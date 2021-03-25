@@ -77,9 +77,8 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    FirebaseUser user = mAuth.getCurrentUser();
                                     startToast("회원가입이 성공적으로 이루어졌습니다.");
-
+                                    finish();
                                 } else {
                                     if(task.getException() != null){
                                         startToast(task.getException().toString());
@@ -89,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
                         });
 
             } else{
-                Toast.makeText(this, "비밀번호가 일치하지 않습니다!", Toast.LENGTH_SHORT).show();
+                startToast("비밀번호가 일치하지 않습니다.");
             }
         }else{
             startToast("이메일 또는 비밀번호를 입력해 주세요.");

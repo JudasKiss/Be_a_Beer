@@ -19,6 +19,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -28,6 +29,11 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
+
+        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+            startMainActivity();
+        }
+
         ListViewAdapter adapter;
 
         //Initialize And Assign Variable
@@ -131,5 +137,10 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
         }else{
             super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+    private void startMainActivity(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
