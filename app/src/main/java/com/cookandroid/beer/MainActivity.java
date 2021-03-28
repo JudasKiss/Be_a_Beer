@@ -39,11 +39,22 @@ public class MainActivity extends AppCompatActivity  {
             switch(view.getId()){
                 case R.id.noidea:
                     startRegisterActivity();
+                    break;
                 case R.id.login:
                     signIn();
+                    break;
             }
         }
     };
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        // 뒤로가기 버튼 클릭 시 프로그램 종료
+        moveTaskToBack(true);
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(1);
+    }
 
     private void startRegisterActivity(){
         Intent intent = new Intent(this, RegisterActivity.class);
