@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -32,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Spinner spinner;
     private DatabaseReference mDatabase;
     private String name;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +74,6 @@ public class RegisterActivity extends AppCompatActivity {
             switch(view.getId()){
                 case R.id.registerButton:
                     signUp();
-                    //profileUpdate();
-                    //finish();
             }
         }
     };
@@ -92,7 +92,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        userId = mAuth.getUid();
                                         startToast("회원가입이 성공적으로 이루어졌습니다.");
+                                        profileUpdate(userId);
                                         finish();
                                     } else {
                                         if(task.getException() != null){
@@ -116,18 +118,18 @@ public class RegisterActivity extends AppCompatActivity {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
-    private void profileUpdate(){
+    private void profileUpdate(String userId){
         name = ((EditText)findViewById(R.id.nameText)).getText().toString();
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         MemberInfo memberInfo = new MemberInfo(name);
-        db.collection("users").document(user.getUid()).set(memberInfo)
+        db.collection("users").document(userId).set(memberInfo)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        startToast("회원정보 등록 성공");
+                        //startToast("회원정보 등록 성공");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
