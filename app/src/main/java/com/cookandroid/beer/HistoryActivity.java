@@ -28,6 +28,7 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+        findViewById(R.id.testButton).setOnClickListener(onClickListener);
 
         //Initialize And Assign Variable
         BottomNavigationView bottomNabvigationView = findViewById(R.id.bottom_navigation);
@@ -87,6 +88,21 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
         ImageButton button3 = findViewById(R.id.imageButton3);
         button3.setOnClickListener(this);
 
+    }
+
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch(view.getId()){
+                case R.id.testButton:
+                    startRecommand();
+            }
+        }
+    };
+
+    public void startRecommand(){
+        Intent intent = new Intent(this, RecommendBeer.class);
+        startActivity(intent);
     }
 
 

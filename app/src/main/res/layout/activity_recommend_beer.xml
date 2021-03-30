@@ -16,23 +16,48 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="203dp"
             android:layout_weight="3">
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="254dp"
-                android:layout_height="54dp"
+                android:id="@+id/beername"
+                android:layout_width="183dp"
+                android:layout_height="37dp"
                 android:text="맥주 정보 예정"
                 android:textColor="@color/yellow"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.611"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.232"
+                app:layout_constraintVertical_bias="0.091"
                 tools:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/beerImage"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                tools:layout_editor_absoluteX="150dp"
+                tools:layout_editor_absoluteY="100dp"/>
+
+            <TextView
+                android:id="@+id/beerTitle"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:text="맥주이름"
+                android:textColor="#FFEB3B"
+                android:textColorHighlight="#FF9800"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="280dp" />
+
+            <TextView
+                android:id="@+id/beerTitleText"
+                android:layout_width="350dp"
+                android:layout_height="20dp"
+                android:text=""
+                android:textColor="#FFEB3B"
+                tools:layout_editor_absoluteX="60dp"
+                tools:layout_editor_absoluteY="280dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,8 +67,8 @@
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="162dp"
-                android:layout_height="80dp"
+                android:layout_width="158dp"
+                android:layout_height="78dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginEnd="48dp"
