@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/beername"
+            android:id="@+id/input"
             android:layout_width="215dp"
             android:layout_height="37dp"
             android:layout_marginLeft="100dp"
