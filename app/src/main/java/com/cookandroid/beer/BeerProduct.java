@@ -3,6 +3,7 @@ package com.cookandroid.beer;
 public class BeerProduct {
     private String imageUrl;
     private String beerTitle;
+    private String beerCompany;
 
     public String getImageUrl() {
         return imageUrl;
@@ -18,5 +19,13 @@ public class BeerProduct {
 
     public void setBeerTitle(String beerTitle) {
         this.beerTitle = beerTitle;
+    }
+
+    public String getBeerCompany() {
+        return beerCompany;
+    }
+
+    public void setBeerCompany(String beerCompany) {
+        this.beerCompany = beerCompany;
     }
 }

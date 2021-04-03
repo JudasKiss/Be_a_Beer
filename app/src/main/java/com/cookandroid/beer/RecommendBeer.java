@@ -21,6 +21,7 @@ public class RecommendBeer extends AppCompatActivity {
 
         ImageView beerImage = findViewById(R.id.beerImage);
         TextView beerTitleText = findViewById(R.id.beerTitleText);
+        TextView beerCompanyText = findViewById(R.id.beerCompanyText);
 
         new Thread(new Runnable() {
             @Override
@@ -30,8 +31,10 @@ public class RecommendBeer extends AppCompatActivity {
                     Document doc = Jsoup.connect("https://www.wine21.com/13_search/beer_view.html?Idx=501616").timeout(6000).get();
                     Elements image = doc.select(".column_detail1").select("div.thumb");
                     Elements name = doc.select(".column_detail2").select(".cnt").select("h4");
+                    Elements company  = doc.select(".column_detail2").select(".wine_info").select(".winery").select("span");
                     String url = image.select("img").attr("src");
                     product.setBeerTitle(name.text());
+                    product.setBeerCompany(company.text());
                     product.setImageUrl(url);
                     //System.out.println(url);
                     //System.out.println(name.text());
@@ -40,10 +43,12 @@ public class RecommendBeer extends AppCompatActivity {
                     @Override
                     public void run() {
                         beerTitleText.setText(product.getBeerTitle());
+                        beerCompanyText.setText(product.getBeerCompany());
                         Picasso.get()
                                 .load(product.getImageUrl())
                                 .into(beerImage);
                     }
+
                 });
 
             }
