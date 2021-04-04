@@ -1,7 +1,6 @@
 package com.cookandroid.beer;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,7 +28,7 @@ public class DBexample extends AppCompatActivity {
     Button btn_read;
     TextView textView;
     private DatabaseReference mDatabase;
-
+    private DatabaseReference rDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +41,25 @@ public class DBexample extends AppCompatActivity {
         textView = findViewById(R.id.textView10);
         //firebase 정의
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        rDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
+        String number = "1234566789";
         btn_read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                readUser();
+                rDatabase.child(number).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            String data = String.valueOf(snapshot.child("상품명").getValue());
+                            textView.setText(data);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
 
@@ -88,12 +102,12 @@ public class DBexample extends AppCompatActivity {
 
     }
 
-    private void readUser() {
+    /*private void readUser() {
         mDatabase.child("Beer").child("000040786179").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
-                if (dataSnapshot.getValue(Beer.class) != null) {
+                if (dataSnapshot.getValue(User.class) != null) {
                     Beer post = dataSnapshot.getValue(Beer.class);
                     textView.setText(post.toString());
                     //Log.w("FireBaseData", "getData" + post.toString());
@@ -108,5 +122,5 @@ public class DBexample extends AppCompatActivity {
                 Log.w("FireBaseData", "loadPost:onCancelled", databaseError.toException());
             }
         });
-    }
+    }*/
 }
