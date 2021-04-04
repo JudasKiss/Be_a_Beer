@@ -42,7 +42,7 @@ public class DBexample extends AppCompatActivity {
         //firebase 정의
         mDatabase = FirebaseDatabase.getInstance().getReference();
         rDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
-        String number = "1234566789";
+        String number = "4002103292876";
         btn_read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,7 +50,7 @@ public class DBexample extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if(snapshot.exists()){
-                            String data = String.valueOf(snapshot.child("상품명").getValue());
+                            String data = String.valueOf(snapshot.child("beerName").getValue());
                             textView.setText(data);
                         }
                     }
@@ -67,15 +67,15 @@ public class DBexample extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String 상품명 = beername.getText().toString();
-                String 생산지역 = beercountry.getText().toString();
+                String beerName = beername.getText().toString();
+                String beerCountry = beercountry.getText().toString();
 
                 //hashmap 만들기
                 HashMap result = new HashMap<>();
-                result.put("name", 상품명);
-                result.put("country", 생산지역);
+                result.put("name", beerName);
+                result.put("country", beerCountry);
 
-                writeNewUser("12345", 상품명, 생산지역);
+                writeNewUser("12345", beerName, beerCountry);
 
             }
         });
