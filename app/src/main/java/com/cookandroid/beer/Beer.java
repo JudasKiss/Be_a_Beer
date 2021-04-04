@@ -1,6 +1,7 @@
 package com.cookandroid.beer;
 public class Beer {
 
+
     public String beerName;
     public String beerCountry;
 
