@@ -4,10 +4,6 @@ public class BeerProduct {
     private String imageUrl;
     private String beerTitle;
     private String beerCompany;
-    private String beerABV;
-    private String beerIBU;
-    private String beerInfo;
-    private String beerStyle;
 
     public String getImageUrl() {
         return imageUrl;
@@ -32,37 +28,4 @@ public class BeerProduct {
     public void setBeerCompany(String beerCompany) {
         this.beerCompany = beerCompany;
     }
-
-    public String getBeerABV() {
-        return beerABV;
-    }
-
-    public void setBeerABV(String beerABV) {
-        this.beerABV = beerABV;
-    }
-
-    public String getBeerIBU() {
-        return beerIBU;
-    }
-
-    public void setBeerIBU(String beerIBU) {
-        this.beerIBU = beerIBU;
-    }
-
-    public String getBeerInfo() {
-        return beerInfo;
-    }
-
-    public void setBeerInfo(String beerInfo) {
-        this.beerInfo = beerInfo;
-    }
-
-    public String getBeerStyle() {
-        return beerStyle;
-    }
-
-    public void setBeerStyle(String beerStyle) {
-        this.beerStyle = beerStyle;
-    }
-
 }
