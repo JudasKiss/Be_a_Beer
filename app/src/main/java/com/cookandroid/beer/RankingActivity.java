@@ -114,7 +114,9 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null){
             if(result.getContents() != null){
-                AlertDialog.Builder builder =new AlertDialog.Builder(this);
+                String barcode = result.getContents();
+                startRecommendActivity(barcode);
+                /*AlertDialog.Builder builder =new AlertDialog.Builder(this);
                 builder.setMessage(result.getContents());
                 builder.setTitle("Scanning Result");
                 builder.setPositiveButton("Scan Again", new DialogInterface.OnClickListener() {
@@ -129,7 +131,7 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
                     }
                 });
                 AlertDialog dialog = builder.create();
-                dialog.show();
+                dialog.show();*/
             }
             else{
                 Toast.makeText(this, "No Results", Toast.LENGTH_LONG).show();
@@ -142,6 +144,13 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
     private void startMainActivity(){
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    private void startRecommendActivity(String barcode){
+        Intent intent = new Intent(this, RecommendBeer.class);
+        intent.putExtra("barcode", barcode);
+        //intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 }
