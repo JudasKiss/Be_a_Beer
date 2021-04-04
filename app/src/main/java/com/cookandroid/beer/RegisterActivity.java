@@ -23,6 +23,10 @@ import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 import static java.lang.Thread.sleep;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -124,8 +128,10 @@ public class RegisterActivity extends AppCompatActivity {
         //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        MemberInfo memberInfo = new MemberInfo(name);
-        db.collection("users").document(userId).set(memberInfo)
+        Map<String, Object> docData = new HashMap<>();
+        docData.put("name", name);
+        docData.put("listExample", Arrays.asList(1, 2, 3));
+        db.collection("users").document(userId).set(docData)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
