@@ -1,4 +1,5 @@
 package com.cookandroid.beer;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,7 @@ public class DBexample extends AppCompatActivity {
     EditText beername;
     EditText beercountry;
     Button btn_save;
+    Button btn_read;
     TextView textView;
     private DatabaseReference mDatabase;
 
@@ -35,13 +37,18 @@ public class DBexample extends AppCompatActivity {
 
         beername = findViewById(R.id.input);
         beercountry = findViewById(R.id.input2);
-
+        btn_read = findViewById(R.id.btn_rd);
         btn_save = findViewById(R.id.btn);
         textView = findViewById(R.id.textView10);
         //firebase 정의
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        btn_read.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                readUser();
+            }
+        });
 
-        readUser();
 
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,16 +59,16 @@ public class DBexample extends AppCompatActivity {
                 //hashmap 만들기
                 HashMap result = new HashMap<>();
                 result.put("name", 상품명);
-                result.put("country",생산지역);
+                result.put("country", 생산지역);
 
-                writeNewUser("12345",상품명,생산지역);
+                writeNewUser("12345", 상품명, 생산지역);
 
             }
         });
     }
 
-    private void writeNewUser(String userId,String name,String country) {
-        Beer beer = new Beer(name,country);
+    private void writeNewUser(String userId, String name, String country) {
+        Beer beer = new Beer(name, country);
 
         mDatabase.child("Beer").child(userId).setValue(beer)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -81,15 +88,15 @@ public class DBexample extends AppCompatActivity {
 
     }
 
-    private void readUser(){
-        mDatabase.child("beer").child("000040786179").addValueEventListener(new ValueEventListener() {
+    private void readUser() {
+        mDatabase.child("Beer").child("000040786179").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
-                if(dataSnapshot.getValue(Beer.class) != null){
+                if (dataSnapshot.getValue(Beer.class) != null) {
                     Beer post = dataSnapshot.getValue(Beer.class);
                     textView.setText(post.toString());
-
+                    //Log.w("FireBaseData", "getData" + post.toString());
                 } else {
                     Toast.makeText(DBexample.this, "데이터 없음...", Toast.LENGTH_SHORT).show();
                 }
