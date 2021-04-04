@@ -2,6 +2,7 @@ package com.cookandroid.beer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +19,9 @@ public class RecommendBeer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend_beer);
+
+        Intent intent = getIntent();
+        String barcode = intent.getStringExtra("barcode");
 
         ImageView beerImage = findViewById(R.id.beerImage);
         TextView beerTitleText = findViewById(R.id.beerTitleText);
