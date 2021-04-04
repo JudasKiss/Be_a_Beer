@@ -23,7 +23,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="196dp"
                 android:layout_height="46dp"
-                android:text="맥주 종류 소개"
+                android:text="종류별 추천"
                 android:textColor="@color/yellow"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -33,6 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.431"
                 tools:textStyle="bold" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
@@ -54,14 +55,10 @@
                 android:lines="1"
                 android:textSize="16dp" />
 
-            <ListView
-                android:id="@+id/listView1"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/editTextFilter"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/round_corner"
-                android:textFilterEnabled="true" />
+                android:layout_height="match_parent" />
 
         </LinearLayout>
     </LinearLayout>
