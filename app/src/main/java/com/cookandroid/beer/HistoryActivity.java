@@ -1,22 +1,18 @@
 package com.cookandroid.beer;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.media.Image;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -66,24 +62,7 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
                 "카스", "5%");
 
 
-        EditText editTextFilter = (EditText)findViewById(R.id.editTextFilter);
-        editTextFilter.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable edit) {
-                String filterText = edit.toString() ;
-                ((ListViewAdapter)listview.getAdapter()).getFilter().filter(filterText) ;
-            }
-        });
 
         ImageButton button3 = findViewById(R.id.imageButton3);
         button3.setOnClickListener(this);

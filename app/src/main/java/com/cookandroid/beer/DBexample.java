@@ -37,7 +37,7 @@ public class DBexample extends AppCompatActivity {
 
         beername = findViewById(R.id.input);
         beercountry = findViewById(R.id.input2);
-        beerstyle=findViewById(R.id.input3);
+        beerstyle =  findViewById(R.id.input3);
         btn_read = findViewById(R.id.btn_rd);
         btn_save = findViewById(R.id.btn);
         textView = findViewById(R.id.textView10);
