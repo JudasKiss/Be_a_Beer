@@ -18,15 +18,27 @@ import org.jsoup.select.Elements;
 
 public class RecommendBeer extends AppCompatActivity {
 
-    Button button1;
+    Button button;
+    Button button2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend_beer);
 
-        button1=(Button) findViewById(R.id.button2);
+        button=(Button) findViewById(R.id.button);
+        button2=(Button) findViewById(R.id.button2);
 
-        button1.setOnClickListener(new View.OnClickListener(){
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(RecommendBeer.this,NationRecommend.class);
+                startActivity(i);
+            }
+        });
+
+
+        button2.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -34,6 +46,9 @@ public class RecommendBeer extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
+
 
 
         Intent intent = getIntent();
