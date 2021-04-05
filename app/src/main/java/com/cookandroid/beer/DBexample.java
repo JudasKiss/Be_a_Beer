@@ -24,6 +24,7 @@ public class DBexample extends AppCompatActivity {
 
     EditText beername;
     EditText beercountry;
+    EditText beerstyle;
     Button btn_save;
     Button btn_read;
     TextView textView;
@@ -36,6 +37,7 @@ public class DBexample extends AppCompatActivity {
 
         beername = findViewById(R.id.input);
         beercountry = findViewById(R.id.input2);
+        beerstyle=findViewById(R.id.input3);
         btn_read = findViewById(R.id.btn_rd);
         btn_save = findViewById(R.id.btn);
         textView = findViewById(R.id.textView10);
@@ -69,20 +71,22 @@ public class DBexample extends AppCompatActivity {
             public void onClick(View v) {
                 String beerName = beername.getText().toString();
                 String beerCountry = beercountry.getText().toString();
+                String style=beerstyle.getText().toString();
 
                 //hashmap 만들기
                 HashMap result = new HashMap<>();
                 result.put("name", beerName);
                 result.put("country", beerCountry);
+                result.put("beer",style);
 
-                writeNewUser("12345", beerName, beerCountry);
+                writeNewUser("12345", beerName, beerCountry,style);
 
             }
         });
     }
 
-    private void writeNewUser(String userId, String name, String country) {
-        Beer beer = new Beer(name, country);
+    private void writeNewUser(String userId, String name, String country,String style) {
+        Beer beer = new Beer(name, country, style);
 
         mDatabase.child("Beer").child(userId).setValue(beer)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

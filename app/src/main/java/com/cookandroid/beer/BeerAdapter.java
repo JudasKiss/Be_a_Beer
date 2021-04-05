@@ -37,6 +37,7 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewfolder
     public void onBindViewHolder(@NonNull BeerViewfolder folder, int position) {
         folder.beer_name.setText(arrayList.get(position).getBeerName());
         folder.beer_country.setText(arrayList.get(position).getBeerCountry());
+        folder.beer_style.setText(arrayList.get(position).getStyle());
 
     }
 
@@ -48,10 +49,12 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewfolder
     public class BeerViewfolder extends RecyclerView.ViewHolder {
         TextView beer_name;
         TextView beer_country;
+        TextView beer_style;
         public BeerViewfolder(@NonNull View itemView) {
             super(itemView);
             this.beer_name=itemView.findViewById(R.id.beer_name);
             this.beer_country=itemView.findViewById(R.id.beer_country);
+            this.beer_style=itemView.findViewById(R.id.beer_style);
 
         }
     }

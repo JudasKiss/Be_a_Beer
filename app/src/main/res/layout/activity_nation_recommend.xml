@@ -23,7 +23,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="220dp"
                 android:layout_height="61dp"
-                android:text="국가소개예정"
+                android:text="국가별 추천"
                 android:textColor="@color/yellow"
                 android:textSize="30sp"
 
@@ -57,14 +57,10 @@
                 android:lines="1"
                 android:textSize="16dp" />
 
-            <ListView
-                android:id="@+id/listView1"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/editTextFilter"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/round_corner"
-                android:textFilterEnabled="true" />
+                android:layout_height="match_parent" />
 
         </LinearLayout>
     </LinearLayout>
