@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -26,8 +27,7 @@ public class KindsRecommend extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Beer> arrayList;
     private FirebaseDatabase database;
-    private DatabaseReference databaseReference;
-
+    private DatabaseReference rDatabase;
 
 
 
@@ -36,6 +36,8 @@ public class KindsRecommend extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kinds_recommend);
 
+        Intent intent = getIntent();
+        String barcode = intent.getStringExtra("barcode");
         recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         layoutManager=new LinearLayoutManager(this);
@@ -43,34 +45,48 @@ public class KindsRecommend extends AppCompatActivity {
         arrayList=new ArrayList<>();
 
         database=FirebaseDatabase.getInstance();
+        rDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
 
-        Query query3 = FirebaseDatabase.getInstance().getReference("Beer")
-                .orderByChild("style")
-                .equalTo("페일라거");
-
-
-        query3.addListenerForSingleValueEvent(new ValueEventListener() {
+        rDatabase.child(barcode).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // 파이어베이스의 데이터를 받아오는 곳
-                arrayList.clear(); //기존 배열리스트가 존재하지않게 초기화
-                for(DataSnapshot Snapshot: snapshot.getChildren()){  //반복문으로 데이터 List를 추출
-                    Beer beer=Snapshot.getValue(Beer.class); // 만들어뒀던 Beer 객체 데이터를 담는다
-                    arrayList.add(beer); //담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
+                if(snapshot.exists()){
+                    String data = String.valueOf(snapshot.child("style").getValue());
+                    Query query3 = FirebaseDatabase.getInstance().getReference("Beer")
+                            .orderByChild("style")
+                            .equalTo(data);
 
+
+                    query3.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            // 파이어베이스의 데이터를 받아오는 곳
+                            arrayList.clear(); //기존 배열리스트가 존재하지않게 초기화
+                            for(DataSnapshot Snapshot: snapshot.getChildren()){  //반복문으로 데이터 List를 추출
+                                Beer beer=Snapshot.getValue(Beer.class); // 만들어뒀던 Beer 객체 데이터를 담는다
+                                arrayList.add(beer); //담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
+
+                            }
+                            adapter.notifyDataSetChanged(); //리스트 저장 및 새로고침
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            // 디비를 가져오던중 에러 발생 시
+                            Log.e("KindsRecommend", String.valueOf(error.toException())); //에러문 출력
+                        }
+                    });
+
+                    adapter=new BeerAdapter(arrayList);
+                    recyclerView.setAdapter(adapter); //리사이클러뷰에 어뎁터 연결
                 }
-                adapter.notifyDataSetChanged(); //리스트 저장 및 새로고침
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                // 디비를 가져오던중 에러 발생 시
-                Log.e("KindsRecommend", String.valueOf(error.toException())); //에러문 출력
+
             }
         });
-
-        adapter=new BeerAdapter(arrayList,this);
-        recyclerView.setAdapter(adapter); //리사이클러뷰에 어뎁터 연결
     }
 
 }

@@ -13,11 +13,9 @@ import java.util.ArrayList;
 
 public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewfolder> {
     private ArrayList<Beer> arrayList;
-    private Context context;
 
-    public BeerAdapter(ArrayList<Beer> arrayList,Context context) {
+    public BeerAdapter(ArrayList<Beer> arrayList) {
         this.arrayList=arrayList;
-        this.context = context;
     }
 
     @NonNull

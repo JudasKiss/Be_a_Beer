@@ -38,12 +38,13 @@ public class RecommendBeer extends AppCompatActivity {
 
         button=(Button) findViewById(R.id.button);
         button2=(Button) findViewById(R.id.button2);
+        Intent intent = getIntent();
+        String barcode = intent.getStringExtra("barcode");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(RecommendBeer.this,NationRecommend.class);
-                startActivity(i);
+                startNationRecommendActivity(barcode);
             }
         });
 
@@ -52,14 +53,10 @@ public class RecommendBeer extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(RecommendBeer.this,KindsRecommend.class);
-                startActivity(i);
+                startKindsRecommendActivity(barcode);
             }
         });
 
-
-        Intent intent = getIntent();
-        String barcode = intent.getStringExtra("barcode");
 
         ImageView beerImage = findViewById(R.id.beerImage);
         TextView beerTitleText = findViewById(R.id.beerTitleText);
@@ -126,5 +123,15 @@ public class RecommendBeer extends AppCompatActivity {
 
             }
         });
+    }
+    private void startNationRecommendActivity(String barcode){
+        Intent intent = new Intent(this, NationRecommend.class);
+        intent.putExtra("barcode", barcode);
+        startActivity(intent);
+    }
+    private void startKindsRecommendActivity(String barcode){
+        Intent intent = new Intent(this, KindsRecommend.class);
+        intent.putExtra("barcode", barcode);
+        startActivity(intent);
     }
 }
