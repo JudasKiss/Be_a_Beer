@@ -1,13 +1,13 @@
 package com.cookandroid.beer;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity  {
         startActivity(intent);
     }
     private void startLoginActivity(){
-        Intent intent = new Intent(this, RankingActivity.class);
+        Intent intent = new Intent(this, MainbeerActivity.class);
         intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
