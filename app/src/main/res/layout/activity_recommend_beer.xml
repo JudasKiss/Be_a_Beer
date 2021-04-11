@@ -16,24 +16,25 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="263dp"
+            android:layout_height="213dp"
             android:layout_weight="0">
 
             <ImageView
                 android:id="@+id/beerImage"
-                android:layout_width="222dp"
-                android:layout_height="240dp"
-                android:layout_marginBottom="4dp"
+                android:layout_width="162dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="188dp"
             android:layout_marginTop="20dp"
             android:layout_weight="3">
 
@@ -43,27 +44,13 @@
                 android:layout_height="0dp"
                 android:layout_marginEnd="70dp"
                 android:layout_marginRight="70dp"
+                android:layout_marginBottom="12dp"
                 android:text=""
                 android:textColor="#FFEB3B"
-                app:layout_constraintBottom_toTopOf="@+id/beerCompanyText"
+                app:layout_constraintBottom_toTopOf="@+id/beerNationText"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/beerTitle"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/beerInfo"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="11dp"
-                android:layout_marginLeft="11dp"
-                android:layout_marginBottom="7dp"
-                android:text="제품정보:"
-                android:textColor="@color/yellow"
-                android:textColorHighlight="#FF9800"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/beerInfoText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/beerStyle" />
 
             <TextView
                 android:id="@+id/beerStyle"
@@ -71,6 +58,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="11dp"
                 android:layout_marginLeft="11dp"
+                android:layout_marginBottom="10dp"
                 android:text="스타일:"
                 android:textColor="@color/yellow"
                 android:textColorHighlight="#FF9800"
@@ -80,30 +68,32 @@
                 app:layout_constraintTop_toBottomOf="@+id/beerIBU" />
 
             <TextView
-                android:id="@+id/beerTitle"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="11dp"
-                android:layout_marginLeft="11dp"
-                android:text="맥주이름:"
-                android:textColor="#FFEB3B"
-                android:textColorHighlight="#FF9800"
-                app:layout_constraintBottom_toTopOf="@+id/beerCompany"
-                app:layout_constraintEnd_toStartOf="@+id/beerTitleText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
                 android:id="@+id/beerCompany"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="11dp"
                 android:layout_marginLeft="11dp"
+                android:layout_marginBottom="8dp"
                 android:text="브루어리:"
                 android:textColor="@color/yellow"
                 android:textColorHighlight="#FF9800"
                 app:layout_constraintBottom_toTopOf="@+id/beerABV"
                 app:layout_constraintEnd_toStartOf="@+id/beerCompanyText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/beerNation" />
+
+            <TextView
+                android:id="@+id/beerNation"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginBottom="8dp"
+                android:text="국가:"
+                android:textColor="@color/yellow"
+                android:textColorHighlight="#FF9800"
+                app:layout_constraintBottom_toTopOf="@+id/beerCompany"
+                app:layout_constraintEnd_toStartOf="@+id/beerNationText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/beerTitle" />
 
@@ -113,6 +103,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="11dp"
                 android:layout_marginLeft="11dp"
+                android:layout_marginBottom="7dp"
                 android:text="ABV:"
                 android:textColor="@color/yellow"
                 android:textColorHighlight="#FF9800"
@@ -127,6 +118,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="11dp"
                 android:layout_marginLeft="11dp"
+                android:layout_marginBottom="13dp"
                 android:text="IBU:"
                 android:textColor="@color/yellow"
                 android:textColorHighlight="#FF9800"
@@ -136,16 +128,61 @@
                 app:layout_constraintTop_toBottomOf="@+id/beerABV" />
 
             <TextView
+                android:id="@+id/beerInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginBottom="24dp"
+                android:text="제품정보:"
+                android:textColor="@color/yellow"
+                android:textColorHighlight="#FF9800"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/beerInfoText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/beerStyle" />
+
+            <TextView
+                android:id="@+id/beerTitle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginBottom="12dp"
+                android:text="맥주이름:"
+                android:textColor="#FFEB3B"
+                android:textColorHighlight="#FF9800"
+                app:layout_constraintBottom_toTopOf="@+id/beerNation"
+                app:layout_constraintEnd_toStartOf="@+id/beerTitleText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/beerCompanyText"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginEnd="70dp"
                 android:layout_marginRight="70dp"
+                android:layout_marginBottom="8dp"
                 android:text=""
                 android:textColor="@color/yellow"
                 app:layout_constraintBottom_toTopOf="@+id/beerABVText"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/beerCompany"
+                app:layout_constraintTop_toBottomOf="@+id/beerNationText" />
+
+            <TextView
+                android:id="@+id/beerNationText"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginBottom="8dp"
+                android:text=""
+                android:textColor="@color/yellow"
+                app:layout_constraintBottom_toTopOf="@+id/beerCompanyText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/beerNation"
                 app:layout_constraintTop_toBottomOf="@+id/beerTitleText" />
 
             <TextView
@@ -154,6 +191,7 @@
                 android:layout_height="0dp"
                 android:layout_marginEnd="70dp"
                 android:layout_marginRight="70dp"
+                android:layout_marginBottom="13dp"
                 android:text=""
                 android:textColor="@color/yellow"
                 app:layout_constraintBottom_toTopOf="@+id/beerStyleText"
@@ -167,6 +205,7 @@
                 android:layout_height="0dp"
                 android:layout_marginEnd="70dp"
                 android:layout_marginRight="70dp"
+                android:layout_marginBottom="10dp"
                 android:text=""
                 android:textColor="@color/yellow"
                 app:layout_constraintBottom_toTopOf="@+id/beerInfoText"
@@ -180,7 +219,7 @@
                 android:layout_height="0dp"
                 android:layout_marginEnd="70dp"
                 android:layout_marginRight="70dp"
-                android:layout_marginBottom="7dp"
+                android:layout_marginBottom="24dp"
                 android:text=""
                 android:textColor="@color/yellow"
                 android:textSize="8sp"
@@ -195,6 +234,7 @@
                 android:layout_height="0dp"
                 android:layout_marginEnd="70dp"
                 android:layout_marginRight="70dp"
+                android:layout_marginBottom="7dp"
                 android:text=""
                 android:textColor="@color/yellow"
                 app:layout_constraintBottom_toTopOf="@+id/beerIBUText"
