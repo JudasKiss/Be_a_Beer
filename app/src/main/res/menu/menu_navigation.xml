@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <item
+        android:id="@+id/mainbeer"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="mainbeer"
+        android:icon="@drawable/beer"/>
     <item
         android:id="@+id/ranking"
         app:showAsAction="ifRoom"
         android:enabled="true"
-        android:title="랭킹"
-        android:icon="@drawable/ic_filter_1_black_24dp"/>
+        android:title="ranking"
+        android:icon="@drawable/ic_assessment_black_24dp"/>
     <item
-        android:id="@+id/history"
+        android:id="@+id/myinfo"
         app:showAsAction="ifRoom"
         android:enabled="true"
-        android:title="기록"
-        android:icon="@drawable/ic_history_black_24dp"/>
+        android:title="myinfo"
+        android:icon="@drawable/ic_person_black_24dp"/>
 </menu>
