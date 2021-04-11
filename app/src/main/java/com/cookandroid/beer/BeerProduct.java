@@ -73,4 +73,5 @@ public class BeerProduct {
     public void setBeerStyle(String beerStyle) {
         this.beerStyle = beerStyle;
     }
+
 }

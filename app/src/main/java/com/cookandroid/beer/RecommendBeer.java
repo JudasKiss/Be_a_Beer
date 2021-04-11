@@ -80,7 +80,7 @@ public class RecommendBeer extends AppCompatActivity {
                                 Document doc = Jsoup.connect(beerUrl).timeout(6000).get();
                                 Elements image = doc.select(".column_detail1").select("div.thumb");
                                 Elements name = doc.select(".column_detail2").select(".cnt").select("h4");
-                                Elements company  = doc.select(".column_detail2").select(".wine_info").select(".winery").select("span");
+                                Element company  = doc.select(".column_detail2").select(".wine_info").select(".winery").select("span").get(0);
                                 Element ABV = doc.select(".column_detail2").select(".wine_info").select("dd").get(3);
                                 Element IBU = doc.select(".column_detail2").select(".wine_info").select("dd").get(7);
                                 Element Style = doc.select(".column_detail2").select(".wine_info").select("dd").get(2);
