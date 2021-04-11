@@ -1,6 +1,7 @@
 package com.cookandroid.beer;
 
 public class BeerProduct {
+    private String beerUrl;
     private String imageUrl;
     private String beerTitle;
     private String beerCompany;
@@ -8,6 +9,14 @@ public class BeerProduct {
     private String beerIBU;
     private String beerInfo;
     private String beerStyle;
+
+    public String getBeerUrl() {
+        return beerUrl;
+    }
+
+    public void setBeerUrl(String beerUrl) {
+        this.beerUrl = beerUrl;
+    }
 
     public String getImageUrl() {
         return imageUrl;

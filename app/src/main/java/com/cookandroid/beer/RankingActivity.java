@@ -117,7 +117,9 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
                 String barcode = result.getContents();
                 startRecommendActivity(barcode);
                 /*AlertDialog.Builder builder =new AlertDialog.Builder(this);
-                builder.setMessage(result.getContents());
+                String url = "https://www.wine21.com/13_search/beer_view.html?Idx=";
+                String url1 = url.concat(barcode);
+                builder.setMessage(url1);
                 builder.setTitle("Scanning Result");
                 builder.setPositiveButton("Scan Again", new DialogInterface.OnClickListener() {
                     @Override
