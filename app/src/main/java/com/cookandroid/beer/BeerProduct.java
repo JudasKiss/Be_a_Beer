@@ -9,7 +9,6 @@ public class BeerProduct {
     private String beerIBU;
     private String beerInfo;
     private String beerStyle;
-    private String beerNation;
 
     public String getBeerUrl() {
         return beerUrl;
@@ -75,11 +74,4 @@ public class BeerProduct {
         this.beerStyle = beerStyle;
     }
 
-    public String getBeerNation() {
-        return beerNation;
-    }
-
-    public void setBeerNation(String beerNation) {
-        this.beerNation = beerNation;
-    }
 }
