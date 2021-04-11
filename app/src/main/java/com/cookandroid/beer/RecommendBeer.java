@@ -65,7 +65,6 @@ public class RecommendBeer extends AppCompatActivity {
         TextView beerIBUText = findViewById(R.id.beerIBUText);
         TextView beerInfoText = findViewById(R.id.beerInfoText);
         TextView beerStyleText = findViewById(R.id.beerStyleText);
-        TextView beerNationText = findViewById(R.id.beerNationText);
         BeerProduct product = new BeerProduct();
         rDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
         rDatabase.child(barcode).addValueEventListener(new ValueEventListener() {
@@ -86,7 +85,6 @@ public class RecommendBeer extends AppCompatActivity {
                                 Element IBU = doc.select(".column_detail2").select(".wine_info").select("dd").get(7);
                                 Element Style = doc.select(".column_detail2").select(".wine_info").select("dd").get(2);
                                 Elements Info = doc.select(".column_detail3").select(".item").select("#MakerNote_wrap");
-                                Elements Nation = doc.select(".column_detail2").select(".wine_info").select(".wine_area").select("span");
 
                                 String url = image.select("img").attr("src");
                                 product.setBeerTitle(name.text());
@@ -95,7 +93,6 @@ public class RecommendBeer extends AppCompatActivity {
                                 product.setBeerIBU(IBU.text());
                                 product.setBeerInfo(Info.text());
                                 product.setBeerStyle(Style.text());
-                                product.setBeerNation(Nation.text());
                                 product.setImageUrl(url);
                             }catch (Exception ex){}
                             runOnUiThread(new Runnable() {
@@ -107,7 +104,6 @@ public class RecommendBeer extends AppCompatActivity {
                                     beerIBUText.setText(product.getBeerIBU());
                                     beerInfoText.setText(product.getBeerInfo());
                                     beerStyleText.setText(product.getBeerStyle());
-                                    beerNationText.setText(product.getBeerNation());
                                     Picasso.get()
                                             .load(product.getImageUrl())
                                             .into(beerImage);
