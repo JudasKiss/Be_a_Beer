@@ -11,11 +11,10 @@
     android:padding="10dp">
 
     <ImageView
-        android:id="@+id/txt_iconStr"
+        android:id="@+id/beer_img"
         android:layout_width="100dp"
         android:layout_height="97dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/beer" />
+        android:layout_marginRight="10dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
