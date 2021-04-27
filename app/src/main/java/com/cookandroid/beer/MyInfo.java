@@ -43,6 +43,7 @@ public class MyInfo extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         Toast.makeText(getApplicationContext(),"내정보 탭 선택됨",Toast.LENGTH_LONG).show();
                         return true;
+
                 }
                 return false;
             }

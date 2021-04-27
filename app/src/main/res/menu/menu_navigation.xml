@@ -21,4 +21,10 @@
         android:enabled="true"
         android:title="myinfo"
         android:icon="@drawable/ic_person_black_24dp"/>
+    <item
+        android:id="@+id/mycamera"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="camera"
+        android:icon="@drawable/camera"/>
 </menu>
