@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -61,6 +60,9 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
                         overridePendingTransition(0,0);
                         Toast.makeText(getApplicationContext(),"내정보 탭 선택됨",Toast.LENGTH_LONG).show();
                         return true;
+                    case R.id.mycamera:
+                        scanCode();
+                        return true;
                 }
                 return false;
             }
@@ -78,9 +80,6 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
 
 
 
-
-        ImageButton button3 = findViewById(R.id.imageButton3);
-        button3.setOnClickListener(this);
 
         findViewById(R.id.logout).setOnClickListener(onClickListener);
 
