@@ -82,20 +82,10 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
         ImageButton button3 = findViewById(R.id.imageButton3);
         button3.setOnClickListener(this);
 
-        findViewById(R.id.logout).setOnClickListener(onClickListener);
+
 
     }
-    View.OnClickListener onClickListener = new View.OnClickListener(){
-        @Override
-        public void onClick(View v){
-            switch(v.getId()){
-                case R.id.logout:
-                    FirebaseAuth.getInstance().signOut();
-                    startMainActivity();
-                    break;
-            }
-        }
-    };
+
 
 
     @Override

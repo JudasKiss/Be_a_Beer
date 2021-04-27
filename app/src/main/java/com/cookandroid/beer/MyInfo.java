@@ -3,12 +3,15 @@ package com.cookandroid.beer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MyInfo extends AppCompatActivity {
 
@@ -44,5 +47,24 @@ public class MyInfo extends AppCompatActivity {
                 return false;
             }
         });
+
+        Button logout2 = (Button)findViewById(R.id.logout2);
+
+        logout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch(v.getId()){
+                    case R.id.logout2:
+                        FirebaseAuth.getInstance().signOut();
+                        startMainActivity();
+                        break;
+                }
+            }
+        });
+    }
+    private void startMainActivity(){
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
