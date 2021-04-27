@@ -86,7 +86,7 @@ public class DBexample extends AppCompatActivity {
     }
 
     private void writeNewUser(String userId, String name, String country,String style) {
-        Beer beer = new Beer(name, country, style);
+        Beer beer = new Beer(name,country,style,userId);
 
         mDatabase.child("Beer").child(userId).setValue(beer)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
