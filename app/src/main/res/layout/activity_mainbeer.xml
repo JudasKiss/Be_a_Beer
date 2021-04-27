@@ -19,20 +19,257 @@
             android:layout_weight="11"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2">
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="136dp"
-                    android:layout_height="41dp"
-                    android:text="레이아웃 추가 예정"
-                    android:textColor="#FFEB3B"
-                    tools:layout_editor_absoluteX="92dp"
-                    tools:layout_editor_absoluteY="241dp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/round_corner2"
+                                android:layout_margin="30dp">
+                                <TextView
+                                    android:id="@+id/beer_suggest1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="한국 맥주추천"
+                                    android:textColor="#FFEB3B"
+                                    android:textSize="24dp" />
+                                <ImageView
+                                    android:id="@+id/txt_iconStr1"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr2"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr4"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr5"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/round_corner3"
+                                android:layout_margin="30dp">
+                                <TextView
+                                    android:id="@+id/beer_suggest2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="독일 맥주추천"
+                                    android:textColor="#FFEB3B"
+                                    android:textSize="24dp" />
+                                <ImageView
+                                    android:id="@+id/txt_iconStr6"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr7"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr8"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr9"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr10"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                            </LinearLayout>
+                        </HorizontalScrollView>
+                      
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/round_corner4"
+                                android:textColor="#FFEB3B"
+                                android:layout_margin="30dp">
+                                <TextView
+                                    android:id="@+id/beer_suggest3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="미국 맥주추천"
+                                    android:textColor="#FFEB3B"
+                                    android:textSize="24dp" />
+                                <ImageView
+                                    android:id="@+id/txt_iconStr11"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr12"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr13"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr14"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr15"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/round_corner5"
+                                android:layout_margin="30dp">
+                                <TextView
+                                    android:id="@+id/beer_suggest4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="벨기에 맥주추천"
+                                    android:textColor="#FFEB3B"
+                                    android:textSize="24dp" />
+                                <ImageView
+                                    android:id="@+id/txt_iconStr16"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr17"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr18"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr19"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                                <ImageView
+                                    android:id="@+id/txt_iconStr20"
+                                    android:layout_width="100dp"
+                                    android:layout_height="97dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/heineken"
+                                    android:layout_margin="50dp"/>
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
