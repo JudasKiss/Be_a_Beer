@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,15 +22,17 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.w3c.dom.Text;
 
 public class RecommendBeer extends AppCompatActivity {
-
+    Button likeButton;
     Button button;
     Button button2;
     private DatabaseReference rDatabase;
     String beerUrltest = "https://www.wine21.com/13_search/beer_view.html?Idx=";
     String data;
     String beerUrl;
+    boolean likeState = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +126,30 @@ public class RecommendBeer extends AppCompatActivity {
 
             }
         });
+
+
+        RatingBar ratingBar = (RatingBar)findViewById(R.id.ratingBar);
+        TextView ratingTextView= (TextView)findViewById(R.id.ratingTextView);
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                ratingTextView.setText(""+rating);
+            }
+        });
+        likeButton = (Button)findViewById(R.id.likeButton);
+        likeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(likeState){
+                    likeButton.setBackgroundResource(R.drawable.ic_thumb_up_selected);
+                }else{
+                    likeButton.setBackgroundResource(R.drawable.ic_thumb_up);
+                }
+
+                likeState=!likeState;
+            }
+        });
+
     }
     private void startNationRecommendActivity(String barcode){
         Intent intent = new Intent(this, NationRecommend.class);
