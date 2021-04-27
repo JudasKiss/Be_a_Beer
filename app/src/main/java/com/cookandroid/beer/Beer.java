@@ -5,17 +5,15 @@ public class Beer {
     public String beerName;
     public String beerCountry;
     public String style;
-    public String Code;
 
     public Beer() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public Beer(String beerName, String beerCountry, String style, String Code) {
+    public Beer(String beerName, String beerCountry, String style) {
         this.beerName = beerName;
         this.beerCountry=beerCountry;
         this.style=style;
-        this.Code=Code;
     }
     //이름
     public String getBeerName() {
@@ -26,7 +24,7 @@ public class Beer {
         this.beerName = beerName;
     }
 
-    //국가
+    //원산지
     public String getBeerCountry() {
         return beerCountry;
     }
@@ -35,7 +33,6 @@ public class Beer {
         this.beerCountry = beerCountry;
     }
 
-    //스타일
     public String getStyle() {
         return style;
     }
@@ -43,11 +40,6 @@ public class Beer {
     public void setStyle(String style) {
         this.style = style;
     }
-
-    //식별 코드
-    public String getCode(){return Code;}
-
-    public void setCode(String Code){this.Code = Code;}
 
 
     @Override

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -12,11 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
@@ -25,11 +21,11 @@ public class DBexample extends AppCompatActivity {
     EditText beername;
     EditText beercountry;
     EditText beerstyle;
+    EditText beerbarcode;
     Button btn_save;
-    Button btn_read;
-    TextView textView;
+
     private DatabaseReference mDatabase;
-    private DatabaseReference rDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,32 +34,11 @@ public class DBexample extends AppCompatActivity {
         beername = findViewById(R.id.input);
         beercountry = findViewById(R.id.input2);
         beerstyle =  findViewById(R.id.input3);
-        btn_read = findViewById(R.id.btn_rd);
+        beerbarcode = findViewById(R.id.input4);
         btn_save = findViewById(R.id.btn);
-        textView = findViewById(R.id.textView10);
+
         //firebase 정의
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        rDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
-        String number = "4002103292876";
-        btn_read.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                rDatabase.child(number).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(snapshot.exists()){
-                            String data = String.valueOf(snapshot.child("beerName").getValue());
-                            textView.setText(data);
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-            }
-        });
 
 
         btn_save.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +47,7 @@ public class DBexample extends AppCompatActivity {
                 String beerName = beername.getText().toString();
                 String beerCountry = beercountry.getText().toString();
                 String style=beerstyle.getText().toString();
+                String barcode=beerbarcode.getText().toString();
 
                 //hashmap 만들기
                 HashMap result = new HashMap<>();
@@ -79,14 +55,14 @@ public class DBexample extends AppCompatActivity {
                 result.put("country", beerCountry);
                 result.put("beer",style);
 
-                writeNewUser("12345", beerName, beerCountry,style);
+                writeNewUser(barcode, beerName, beerCountry,style);
 
             }
         });
     }
 
     private void writeNewUser(String userId, String name, String country,String style) {
-        Beer beer = new Beer(name,country,style,userId);
+        Beer beer = new Beer(name, country, style);
 
         mDatabase.child("Beer").child(userId).setValue(beer)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -106,25 +82,5 @@ public class DBexample extends AppCompatActivity {
 
     }
 
-    /*private void readUser() {
-        mDatabase.child("Beer").child("000040786179").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                if (dataSnapshot.getValue(User.class) != null) {
-                    Beer post = dataSnapshot.getValue(Beer.class);
-                    textView.setText(post.toString());
-                    //Log.w("FireBaseData", "getData" + post.toString());
-                } else {
-                    Toast.makeText(DBexample.this, "데이터 없음...", Toast.LENGTH_SHORT).show();
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w("FireBaseData", "loadPost:onCancelled", databaseError.toException());
-            }
-        });
-    }*/
 }
