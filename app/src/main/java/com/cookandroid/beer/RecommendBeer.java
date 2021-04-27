@@ -32,7 +32,7 @@ public class RecommendBeer extends AppCompatActivity {
     String beerUrltest = "https://www.wine21.com/13_search/beer_view.html?Idx=";
     String data;
     String beerUrl;
-    boolean likeState = false;
+    boolean likeState = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
