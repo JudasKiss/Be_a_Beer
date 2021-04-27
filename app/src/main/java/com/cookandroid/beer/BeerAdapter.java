@@ -1,6 +1,7 @@
 package com.cookandroid.beer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +11,19 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewfolder> {
     private ArrayList<Beer> arrayList;
+    private DatabaseReference rDatabase;
+    String barcode;
 
     public BeerAdapter(ArrayList<Beer> arrayList) {
         this.arrayList=arrayList;
@@ -35,6 +45,30 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewfolder
         folder.beer_country.setText(arrayList.get(position).getBeerCountry());
         folder.beer_style.setText(arrayList.get(position).getStyle());
 
+        folder.itemView.setTag(position);
+        folder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = folder.beer_name.getText().toString();
+                Query query = FirebaseDatabase.getInstance().getReference("Beer")
+                        .orderByChild("beerCountry")
+                        .equalTo(name);
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        barcode = snapshot.getKey();
+                        Intent intent = new Intent(folder.itemView.getContext(), RecommendBeer.class);
+                        intent.putExtra("barcode", barcode);
+                        folder.itemView.getContext().startActivity(intent);
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+            }
+        });
     }
 
     @Override
@@ -54,4 +88,5 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewfolder
 
         }
     }
+
 }
