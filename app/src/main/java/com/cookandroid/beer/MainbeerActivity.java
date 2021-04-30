@@ -9,20 +9,23 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class MainbeerActivity extends AppCompatActivity implements View.OnClickListener{
-    ListView listview = null;
+    RecyclerView recyclerView,recyclerView2,recyclerView3,recyclerView4;
+    MainbeerAdapter adapter,adapter2,adapter3,adapter4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainbeer);
 
 
-        ListViewAdapter adapter;
+
 
         //Initialize And Assign Variable
         BottomNavigationView bottomNabvigationView = findViewById(R.id.bottom_navigation);
@@ -55,6 +58,66 @@ public class MainbeerActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
+        //1번
+        recyclerView = findViewById(R.id.recyclerView);
+        adapter = new MainbeerAdapter(getApplicationContext());
+        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
+        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
+        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
+        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
+        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
+        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
+        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
+        recyclerView.setAdapter(adapter);
+
+        //2번
+        recyclerView2 = findViewById(R.id.recyclerView2);
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        recyclerView2.setLayoutManager(layoutManager2);
+        adapter2 = new MainbeerAdapter(getApplicationContext());
+        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
+        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
+        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
+        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
+        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
+        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
+        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
+        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
+        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
+        recyclerView2.setAdapter(adapter2);
+
+        //3번
+        recyclerView3 = findViewById(R.id.recyclerView3);
+        LinearLayoutManager layoutManager3 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        recyclerView3.setLayoutManager(layoutManager3);
+        adapter3 = new MainbeerAdapter(getApplicationContext());
+        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
+        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
+        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
+        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
+        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
+        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
+        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
+        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
+        recyclerView3.setAdapter(adapter3);
+
+        //4번
+        recyclerView4 = findViewById(R.id.recyclerView4);
+        LinearLayoutManager layoutManager4 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        recyclerView4.setLayoutManager(layoutManager4);
+        adapter4 = new MainbeerAdapter(getApplicationContext());
+        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        recyclerView4.setAdapter(adapter4);
     }
 
 

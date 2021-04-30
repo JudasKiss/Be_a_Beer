@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_beerView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginLeft="20dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/mbImage"
+        android:layout_width="80dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/mbCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="회사"
+        android:textColor="@color/yellow" />
+
+    <TextView
+        android:id="@+id/mbName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="이름"
+        android:textColor="@color/yellow" />
+
+    <TextView
+        android:id="@+id/mbRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="평점"
+        android:textColor="@color/yellow"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+</LinearLayout>
