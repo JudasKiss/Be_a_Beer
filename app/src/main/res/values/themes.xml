@@ -16,4 +16,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="customRatingBar" parent="android:Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_rating</item>
+    </style>
 </resources>
