@@ -7,7 +7,7 @@ public class BeerProduct {
     private String beerCompany;
     private String beerABV;
     private String beerIBU;
-    private String beerInfo;
+    private String beerRemark;
     private String beerStyle;
 
     public String getBeerUrl() {
@@ -58,12 +58,12 @@ public class BeerProduct {
         this.beerIBU = beerIBU;
     }
 
-    public String getBeerInfo() {
-        return beerInfo;
+    public String getBeerRemark() {
+        return beerRemark;
     }
 
-    public void setBeerInfo(String beerInfo) {
-        this.beerInfo = beerInfo;
+    public void setBeerRemark(String beerRemark) {
+        this.beerRemark = beerRemark;
     }
 
     public String getBeerStyle() {
