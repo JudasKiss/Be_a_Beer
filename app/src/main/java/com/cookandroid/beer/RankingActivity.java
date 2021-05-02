@@ -18,7 +18,7 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class RankingActivity extends AppCompatActivity implements View.OnClickListener{
-    ListView listview = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,7 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
             startMainActivity();
         }
 
-        ListViewAdapter adapter;
+
 
         //Initialize And Assign Variable
         BottomNavigationView bottomNabvigationView = findViewById(R.id.bottom_navigation);
@@ -67,16 +67,6 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
                 return false;
             }
         });
-
-        // Adapter 생성
-        adapter = new ListViewAdapter();
-
-        // 리스트뷰 참조 및 Adapter달기
-        listview = (ListView) findViewById(R.id.listView1);
-        listview.setAdapter(adapter);
-
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.beer),
-                "카스", "5%");
 
 
     }
