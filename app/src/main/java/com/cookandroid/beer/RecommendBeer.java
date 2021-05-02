@@ -102,7 +102,7 @@ public class RecommendBeer extends AppCompatActivity {
         TextView beerCompanyText = findViewById(R.id.beerCompanyText);
         TextView beerABVText = findViewById(R.id.beerABVText);
         TextView beerIBUText = findViewById(R.id.beerIBUText);
-        TextView beerInfoText = findViewById(R.id.beerInfoText);
+        TextView beerRemarkText = findViewById(R.id.beerRemarkText);
         TextView beerStyleText = findViewById(R.id.beerStyleText);
         BeerProduct product = new BeerProduct();
         rDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
@@ -123,14 +123,14 @@ public class RecommendBeer extends AppCompatActivity {
                                 Element ABV = doc.select(".column_detail2").select(".wine_info").select("dd").get(3);
                                 Element IBU = doc.select(".column_detail2").select(".wine_info").select("dd").get(7);
                                 Element Style = doc.select(".column_detail2").select(".wine_info").select("dd").get(2);
-                                Elements Info = doc.select(".column_detail3").select(".item").select("#MakerNote_wrap");
+                                Element Remark = doc.select(".column_detail2").select(".wine_info").select("dd").get(13);
 
                                 String url = image.select("img").attr("src");
                                 product.setBeerTitle(name.text());
                                 product.setBeerCompany(company.text());
                                 product.setBeerABV(ABV.text());
                                 product.setBeerIBU(IBU.text());
-                                product.setBeerInfo(Info.text());
+                                product.setBeerRemark(Remark.text());
                                 product.setBeerStyle(Style.text());
                                 product.setImageUrl(url);
                             }catch (Exception ex){}
@@ -141,7 +141,7 @@ public class RecommendBeer extends AppCompatActivity {
                                     beerCompanyText.setText(product.getBeerCompany());
                                     beerABVText.setText(product.getBeerABV());
                                     beerIBUText.setText(product.getBeerIBU());
-                                    beerInfoText.setText(product.getBeerInfo());
+                                    beerRemarkText.setText(product.getBeerRemark());
                                     beerStyleText.setText(product.getBeerStyle());
                                     Picasso.get()
                                             .load(product.getImageUrl())
