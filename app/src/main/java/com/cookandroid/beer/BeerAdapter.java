@@ -44,19 +44,18 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewfolder
         folder.beer_name.setText(arrayList.get(position).getBeerName());
         folder.beer_country.setText(arrayList.get(position).getBeerCountry());
         folder.beer_style.setText(arrayList.get(position).getStyle());
-
         folder.itemView.setTag(position);
         folder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String name = folder.beer_name.getText().toString();
+                barcode = arrayList.get(position).getCode();
                 Query query = FirebaseDatabase.getInstance().getReference("Beer")
                         .orderByChild("beerCountry")
                         .equalTo(name);
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        barcode = snapshot.getKey();
                         Intent intent = new Intent(folder.itemView.getContext(), RecommendBeer.class);
                         intent.putExtra("barcode", barcode);
                         folder.itemView.getContext().startActivity(intent);

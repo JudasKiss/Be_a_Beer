@@ -5,9 +5,25 @@ public class Beer {
     public String beerName;
     public String beerCountry;
     public String style;
+    public String code;
 
     public Beer() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
+    }
+
+    public Beer(String beerName, String beerCountry, String style, String code) {
+        this.beerName = beerName;
+        this.beerCountry = beerCountry;
+        this.style = style;
+        this.code = code;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Beer(String beerName, String beerCountry, String style) {

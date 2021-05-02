@@ -100,6 +100,7 @@ public class KindsRecommend extends AppCompatActivity {
                             arrayList.clear(); //기존 배열리스트가 존재하지않게 초기화
                             for(DataSnapshot Snapshot: snapshot.getChildren()){  //반복문으로 데이터 List를 추출
                                 Beer beer=Snapshot.getValue(Beer.class); // 만들어뒀던 Beer 객체 데이터를 담는다
+                                beer.setCode(Snapshot.getKey());
                                 arrayList.add(beer); //담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
 
                             }
