@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,6 +42,9 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewfolder
 
     @Override
     public void onBindViewHolder(@NonNull BeerViewfolder folder, int position) {
+        Glide.with(folder.itemView.getContext())
+                .load(arrayList.get(position).getUrl())
+                .into(folder.beer_img);
         folder.beer_name.setText(arrayList.get(position).getBeerName());
         folder.beer_country.setText(arrayList.get(position).getBeerCountry());
         folder.beer_style.setText(arrayList.get(position).getStyle());
@@ -51,7 +55,7 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewfolder
                 String name = folder.beer_name.getText().toString();
                 barcode = arrayList.get(position).getCode();
                 Query query = FirebaseDatabase.getInstance().getReference("Beer")
-                        .orderByChild("beerCountry")
+                        .orderByChild("beerName")
                         .equalTo(name);
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -76,11 +80,13 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewfolder
     }
 
     public class BeerViewfolder extends RecyclerView.ViewHolder {
+        ImageView beer_img;
         TextView beer_name;
         TextView beer_country;
         TextView beer_style;
         public BeerViewfolder(@NonNull View itemView) {
             super(itemView);
+            this.beer_img=itemView.findViewById(R.id.beer_img);
             this.beer_name=itemView.findViewById(R.id.beer_name);
             this.beer_country=itemView.findViewById(R.id.beer_country);
             this.beer_style=itemView.findViewById(R.id.beer_style);
