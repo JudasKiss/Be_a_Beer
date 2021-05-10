@@ -2,8 +2,8 @@ package com.cookandroid.beer;
 
 public class RankingBeer {
     //private String profile;
-    private String beerName;
-    private String beerCountry;
+    private String name;
+    private String country;
     private String style;
     private int rating;
 
@@ -15,20 +15,20 @@ public class RankingBeer {
         this.profile = profile;
     }*/
 
-    public String getBeerName() {
-        return beerName;
+    public String getName() {
+        return name;
     }
 
-    public void setBeerName(String beerName) {
-        this.beerName = beerName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getBeerCountry() {
-        return beerCountry;
+    public String getCountry() {
+        return country;
     }
 
-    public void setBeerCountry(String beerCountry) {
-        this.beerCountry = beerCountry;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getStyle() {
