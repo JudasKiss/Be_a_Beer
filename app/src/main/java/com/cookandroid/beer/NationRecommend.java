@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.DatePicker;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,12 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.squareup.picasso.Picasso;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
 
@@ -101,6 +108,36 @@ public class NationRecommend extends AppCompatActivity {
                             for(DataSnapshot Snapshot: snapshot.getChildren()){  //반복문으로 데이터 List를 추출
                                 Beer beer=Snapshot.getValue(Beer.class); // 만들어뒀던 Beer 객체 데이터를 담는다
                                 beer.setCode(Snapshot.getKey());
+                                String barcode = Snapshot.getKey();
+                                rDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
+                                rDatabase.child(barcode).addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if(snapshot.exists()){
+                                            String data = String.valueOf(snapshot.child("Code").getValue());
+                                            String beerUrltest = "https://www.wine21.com/13_search/beer_view.html?Idx=";
+                                            String beerUrl = beerUrltest.concat(data);
+                                            new Thread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    try{
+                                                        Document doc = Jsoup.connect(beerUrl).timeout(6000).get();
+                                                        Elements image = doc.select(".column_detail1").select("div.thumb");
+                                                        String url = image.select("img").attr("src");
+                                                        beer.setUrl(url);
+                                                    }catch (Exception ex){}
+                                                }
+                                            }).start();
+                                        }
+                                        else{
+                                            //바코드 없을 때 오류메세지
+                                        }
+                                    }
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
                                 arrayList.add(beer); //담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
                             }
                             adapter.notifyDataSetChanged(); //리스트 저장 및 새로고침
@@ -176,7 +213,6 @@ public class NationRecommend extends AppCompatActivity {
     private void startRecommendActivity(String barcode){
         Intent intent = new Intent(this, RecommendBeer.class);
         intent.putExtra("barcode", barcode);
-        //intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 

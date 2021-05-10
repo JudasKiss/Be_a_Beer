@@ -6,16 +6,26 @@ public class Beer {
     public String beerCountry;
     public String style;
     public String code;
+    public String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public Beer() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public Beer(String beerName, String beerCountry, String style, String code) {
+    public Beer(String beerName, String beerCountry, String style, String code, String url) {
         this.beerName = beerName;
         this.beerCountry = beerCountry;
         this.style = style;
         this.code = code;
+        this.url = url;
     }
 
     public String getCode() {

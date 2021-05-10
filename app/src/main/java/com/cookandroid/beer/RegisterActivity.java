@@ -130,7 +130,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         Map<String, Object> docData = new HashMap<>();
         docData.put("name", name);
-        docData.put("listExample", Arrays.asList(1, 2, 3));
         db.collection("users").document(userId).set(docData)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
