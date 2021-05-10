@@ -1,33 +1,25 @@
 package com.cookandroid.beer;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
-import static java.lang.Thread.sleep;
 
 public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -35,7 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private ArrayAdapter adapter;
     private Spinner spinner;
-    private DatabaseReference mDatabase;
+    private DatabaseReference  mDatabase = FirebaseDatabase.getInstance().getReference();
     private String name;
     private String userId;
 
@@ -98,7 +90,12 @@ public class RegisterActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         userId = mAuth.getUid();
                                         startToast("회원가입이 성공적으로 이루어졌습니다.");
-                                        profileUpdate(userId);
+                                        userId = mAuth.getUid();
+                                        Map<String,Object> userMap = new HashMap<>();
+                                        userMap.put(FirebaseID.email,email);
+                                        userMap.put(FirebaseID.name,name);
+                                        userMap.put(FirebaseID.password,password);
+                                        mDatabase.child("User").child(userId).setValue(userMap);
                                         finish();
                                     } else {
                                         if(task.getException() != null){
@@ -122,27 +119,5 @@ public class RegisterActivity extends AppCompatActivity {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
-    private void profileUpdate(String userId){
-        name = ((EditText)findViewById(R.id.nameText)).getText().toString();
-
-        //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        Map<String, Object> docData = new HashMap<>();
-        docData.put("name", name);
-        db.collection("users").document(userId).set(docData)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        //startToast("회원정보 등록 성공");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        startToast("회원정보 등록 실패");
-                    }
-                });
-    }
 
 }
