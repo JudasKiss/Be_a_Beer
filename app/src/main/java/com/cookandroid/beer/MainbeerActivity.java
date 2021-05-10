@@ -1,24 +1,36 @@
 package com.cookandroid.beer;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import static java.lang.Thread.sleep;
 
 public class MainbeerActivity extends AppCompatActivity implements View.OnClickListener{
     RecyclerView recyclerView,recyclerView2,recyclerView3,recyclerView4;
     MainbeerAdapter adapter,adapter2,adapter3,adapter4;
+    private DatabaseReference rDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,25 +154,25 @@ public class MainbeerActivity extends AppCompatActivity implements View.OnClickL
         if(result != null){
             if(result.getContents() != null){
                 String barcode = result.getContents();
-                startRecommendActivity(barcode);
-                /*AlertDialog.Builder builder =new AlertDialog.Builder(this);
-                String url = "https://www.wine21.com/13_search/beer_view.html?Idx=";
-                String url1 = url.concat(barcode);
-                builder.setMessage(url1);
-                builder.setTitle("Scanning Result");
-                builder.setPositiveButton("Scan Again", new DialogInterface.OnClickListener() {
+                String b = "Beer/";
+                String temp = b.concat(barcode);
+                rDatabase = FirebaseDatabase.getInstance().getReference(temp);
+                rDatabase.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        scanCode();
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        try{
+                            String value = dataSnapshot.getValue().toString();
+                            startRecommendActivity(barcode);
+                        }catch(NullPointerException e){
+                            showDialog();
+                        }
                     }
-                }).setNegativeButton("finish", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
+                    public void onCancelled(DatabaseError error) {
+                        // Failed to read value
+                        Log.w("Database", "Failed to read value.", error.toException());
                     }
                 });
-                AlertDialog dialog = builder.create();
-                dialog.show();*/
             }
             else{
                 Toast.makeText(this, "No Results", Toast.LENGTH_LONG).show();
@@ -181,5 +193,29 @@ public class MainbeerActivity extends AppCompatActivity implements View.OnClickL
         intent.putExtra("barcode", barcode);
         //intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+
+    private void startDBexampleActivity(){
+        Intent intent = new Intent(this, DBexample.class);
+        intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    private void showDialog(){
+        AlertDialog.Builder builder =new AlertDialog.Builder(this);
+        builder.setMessage("저희 데이터에 없는 맥주네요ㅠㅠ 다른 사용자를 위해 맥주를 추가해주시겠어요?");
+        builder.setTitle("죄송해요!");
+        builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        }).setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                startDBexampleActivity();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
