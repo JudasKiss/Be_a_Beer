@@ -15,8 +15,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,21 +33,39 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class RecommendBeer extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class RecommendBeer extends AppCompatActivity implements View.OnClickListener {
     Button likeButton;
     Button button;
     Button button2;
+    private TextView test;
     private DatabaseReference rDatabase;
+    private DatabaseReference mDatabase;
+    private String uId;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
     String beerUrltest = "https://www.wine21.com/13_search/beer_view.html?Idx=";
     String data;
     String beerUrl;
     boolean likeState = true;
+
+    private RecyclerView mPostRecyclerView;
+    private PostAdapter mAdapter;
+    private List<Post> mDatas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend_beer);
 
+        mPostRecyclerView = findViewById(R.id.main_recyclerview);
+        test=findViewById(R.id.jebaltext);
+
+
+
+        findViewById(R.id.main_post_edit).setOnClickListener(this);
         //Initialize And Assign Variable
         BottomNavigationView bottomNabvigationView = findViewById(R.id.bottom_navigation);
         bottomNabvigationView.setSelectedItemId(R.id.myinfo);
@@ -277,4 +297,54 @@ public class RecommendBeer extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mDatas = new ArrayList<>();
+        uId = mAuth.getUid();
+
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mDatas.clear();
+                String barcode="4066600601920";
+                for(DataSnapshot ds: snapshot.getChildren()){
+                    if(ds.getKey().equals(barcode)){
+                        test.setText(ds.getKey());
+                        rDatabase=mDatabase.child(barcode).child("post");
+                        rDatabase.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                for(DataSnapshot ds2: snapshot.getChildren()){
+                                    Post data = ds2.getValue(Post.class);
+                                    mDatas.add(data);
+                                }
+                                mAdapter = new PostAdapter(mDatas);
+                                mPostRecyclerView.setAdapter(mAdapter);
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                test.setText("siballll");
+            }
+        });
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(this,PostActivity.class));
+    }
+
+
 }

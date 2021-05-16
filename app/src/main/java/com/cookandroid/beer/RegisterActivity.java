@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     private ArrayAdapter adapter;
     private Spinner spinner;
     private DatabaseReference  mDatabase = FirebaseDatabase.getInstance().getReference();
+    private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private String name;
     private String userId;
 
@@ -88,14 +90,16 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        FirebaseUser user = mAuth.getCurrentUser();
                                         userId = mAuth.getUid();
                                         startToast("회원가입이 성공적으로 이루어졌습니다.");
-                                        userId = mAuth.getUid();
                                         Map<String,Object> userMap = new HashMap<>();
                                         userMap.put(FirebaseID.email,email);
                                         userMap.put(FirebaseID.name,name);
                                         userMap.put(FirebaseID.password,password);
+                                        userMap.put(FirebaseID.documentId,userId);
                                         mDatabase.child("User").child(userId).setValue(userMap);
+                                        ;
                                         finish();
                                     } else {
                                         if(task.getException() != null){

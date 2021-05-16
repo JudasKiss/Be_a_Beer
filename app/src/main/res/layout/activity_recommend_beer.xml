@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,284 +10,323 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="11"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="366dp"
-            android:layout_weight="0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="11"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
 
-            <ImageView
-                android:id="@+id/beerImage"
-                android:layout_width="205dp"
-                android:layout_height="313dp"
-                android:layout_marginTop="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/beerImage"
+                        android:layout_width="191dp"
+                        android:layout_height="263dp"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <RatingBar
-                android:id="@+id/ratingBar"
-                style="@style/Widget.AppCompat.RatingBar.Indicator"
-                android:layout_width="180dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="36dp"
-                android:layout_marginRight="36dp"
-                android:layout_marginBottom="8dp"
-                android:indeterminate="false"
-                android:isIndicator="false"
-                android:max="5"
-                android:numStars="5"
-                android:rating="4.5"
-                android:stepSize="0.5"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/ratingTextView"
-                app:layout_constraintTop_toBottomOf="@+id/beerImage"
-                app:layout_constraintVertical_bias="0.983" />
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        style="@style/Widget.AppCompat.RatingBar.Indicator"
+                        android:layout_width="180dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="36dp"
+                        android:layout_marginRight="36dp"
+                        android:layout_marginBottom="8dp"
+                        android:indeterminate="false"
+                        android:isIndicator="false"
+                        android:max="5"
+                        android:numStars="5"
+                        android:rating="4.5"
+                        android:stepSize="0.5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ratingTextView"
+                        app:layout_constraintTop_toBottomOf="@+id/beerImage"
+                        app:layout_constraintVertical_bias="0.983" />
 
-            <TextView
-                android:id="@+id/ratingTextView"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="28dp"
-                android:layout_marginRight="28dp"
-                android:layout_marginBottom="9dp"
-                android:textColor="@color/white"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        android:id="@+id/ratingTextView"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="28dp"
+                        android:layout_marginBottom="9dp"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/likeButton"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight="0"
-                android:background="@drawable/thumb_up"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/likeButton"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/thumb_up"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/jebaltext"
+                        android:layout_width="71dp"
+                        android:layout_height="46dp"
+                        android:text="TextView"
+                        tools:layout_editor_absoluteX="25dp"
+                        tools:layout_editor_absoluteY="90dp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250sp">
+
+                    <TextView
+                        android:id="@+id/beerTitleText"
+                        android:layout_width="250dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="14dp"
+                        android:text=""
+                        android:textColor="#FFEB3B"
+                        app:layout_constraintStart_toEndOf="@+id/beerTitle"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/beerStyle"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="스타일:"
+                        android:textColor="@color/yellow"
+                        android:textColorHighlight="#FF9800"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/beerIBU" />
+
+                    <TextView
+                        android:id="@+id/beerCompany"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="브루어리:"
+                        android:textColor="@color/yellow"
+                        android:textColorHighlight="#FF9800"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/beerTitle" />
+
+                    <TextView
+                        android:id="@+id/beerABV"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="ABV:"
+                        android:textColor="@color/yellow"
+                        android:textColorHighlight="#FF9800"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/beerCompany" />
+
+                    <TextView
+                        android:id="@+id/beerIBU"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="IBU:"
+                        android:textColor="@color/yellow"
+                        android:textColorHighlight="#FF9800"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/beerABV" />
+
+                    <TextView
+                        android:id="@+id/beerTitle"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="14dp"
+                        android:text="맥주이름:"
+                        android:textColor="#FFEB3B"
+                        android:textColorHighlight="#FF9800"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/beerCompanyText"
+                        android:layout_width="250dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        app:layout_constraintStart_toEndOf="@+id/beerCompany"
+                        app:layout_constraintTop_toBottomOf="@+id/beerTitleText" />
+
+                    <TextView
+                        android:id="@+id/beerIBUText"
+                        android:layout_width="250dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        app:layout_constraintStart_toEndOf="@+id/beerIBU"
+                        app:layout_constraintTop_toBottomOf="@+id/beerABVText" />
+
+                    <TextView
+                        android:id="@+id/beerStyleText"
+                        android:layout_width="250dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        app:layout_constraintStart_toEndOf="@+id/beerStyle"
+                        app:layout_constraintTop_toBottomOf="@+id/beerIBUText" />
+
+                    <TextView
+                        android:id="@+id/beerRemarkText"
+                        android:layout_width="250dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        app:layout_constraintStart_toEndOf="@+id/beerRemark"
+                        app:layout_constraintTop_toBottomOf="@+id/beerStyleText" />
+
+                    <TextView
+                        android:id="@+id/beerRemark"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="제품정보:"
+                        android:textColor="@color/yellow"
+                        android:textColorHighlight="#FF9800"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/beerStyle" />
+
+                    <TextView
+                        android:id="@+id/beerABVText"
+                        android:layout_width="250dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        app:layout_constraintStart_toEndOf="@+id/beerABV"
+                        app:layout_constraintTop_toBottomOf="@+id/beerCompanyText" />
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="163dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/round_corner"
+                        android:text="국가별 맥주추천"
+                        android:textColor="@color/yellow"
+                        android:textSize="14sp"
+                        app:backgroundTint="#FF2B1845"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="163dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/round_corner"
+                        android:text="종류별 맥주추천"
+                        android:textColor="@color/yellow"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="#FF2B1845"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/main_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/main_post_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_edit"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="16dp"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="254dp"
-            android:layout_weight="3"
-            app:layout_constraintBottom_toTopOf="@+id/beerIBU"
-            app:layout_constraintTop_toTopOf="@+id/beerIBU">
+            android:layout_height="50dp"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/beerTitleText"
-                android:layout_width="250dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginLeft="28dp"
-                android:layout_marginTop="14dp"
-                android:text=""
-                android:textColor="#FFEB3B"
-                app:layout_constraintStart_toEndOf="@+id/beerTitle"
-                app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:background="#FF22113A"
+                app:itemIconTint="@drawable/selector"
+                app:itemTextColor="@drawable/selector"
+                app:menu="@menu/menu_navigation">
 
-            <TextView
-                android:id="@+id/beerStyle"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:text="스타일:"
-                android:textColor="@color/yellow"
-                android:textColorHighlight="#FF9800"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/beerIBU" />
 
-            <TextView
-                android:id="@+id/beerCompany"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:text="브루어리:"
-                android:textColor="@color/yellow"
-                android:textColorHighlight="#FF9800"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/beerTitle" />
-
-            <TextView
-                android:id="@+id/beerABV"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:text="ABV:"
-                android:textColor="@color/yellow"
-                android:textColorHighlight="#FF9800"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/beerCompany" />
-
-            <TextView
-                android:id="@+id/beerIBU"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:text="IBU:"
-                android:textColor="@color/yellow"
-                android:textColorHighlight="#FF9800"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/beerABV" />
-
-            <TextView
-                android:id="@+id/beerTitle"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="14dp"
-                android:text="맥주이름:"
-                android:textColor="#FFEB3B"
-                android:textColorHighlight="#FF9800"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/beerCompanyText"
-                android:layout_width="250dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginLeft="28dp"
-                android:layout_marginTop="8dp"
-                android:text=""
-                android:textColor="@color/yellow"
-                app:layout_constraintStart_toEndOf="@+id/beerCompany"
-                app:layout_constraintTop_toBottomOf="@+id/beerTitleText" />
-
-            <TextView
-                android:id="@+id/beerIBUText"
-                android:layout_width="250dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginLeft="28dp"
-                android:layout_marginTop="8dp"
-                android:text=""
-                android:textColor="@color/yellow"
-                app:layout_constraintStart_toEndOf="@+id/beerIBU"
-                app:layout_constraintTop_toBottomOf="@+id/beerABVText" />
-
-            <TextView
-                android:id="@+id/beerStyleText"
-                android:layout_width="250dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginLeft="28dp"
-                android:layout_marginTop="8dp"
-                android:text=""
-                android:textColor="@color/yellow"
-                app:layout_constraintStart_toEndOf="@+id/beerStyle"
-                app:layout_constraintTop_toBottomOf="@+id/beerIBUText" />
-
-            <TextView
-                android:id="@+id/beerRemarkText"
-                android:layout_width="250dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginLeft="28dp"
-                android:layout_marginTop="8dp"
-                android:text=""
-                android:textColor="@color/yellow"
-                app:layout_constraintStart_toEndOf="@+id/beerRemark"
-                app:layout_constraintTop_toBottomOf="@+id/beerStyleText" />
-
-            <TextView
-                android:id="@+id/beerRemark"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:text="제품정보:"
-                android:textColor="@color/yellow"
-                android:textColorHighlight="#FF9800"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/beerStyle" />
-
-            <TextView
-                android:id="@+id/beerABVText"
-                android:layout_width="250dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginLeft="28dp"
-                android:layout_marginTop="8dp"
-                android:text=""
-                android:textColor="@color/yellow"
-                app:layout_constraintStart_toEndOf="@+id/beerABV"
-                app:layout_constraintTop_toBottomOf="@+id/beerCompanyText" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="163dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/round_corner"
-                android:text="국가별 맥주추천"
-                android:textColor="@color/yellow"
-                android:textSize="14sp"
-                app:backgroundTint="#FF2B1845"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:textStyle="bold" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="163dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/round_corner"
-                android:text="종류별 맥주추천"
-                android:textColor="@color/yellow"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:backgroundTint="#FF2B1845"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:background="#FF22113A"
-            app:itemIconTint="@drawable/selector"
-            app:itemTextColor="@drawable/selector"
-            app:menu="@menu/menu_navigation">
-
-
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
-    </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
