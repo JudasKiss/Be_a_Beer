@@ -34,8 +34,8 @@ public class RankingBeerAdapter extends RecyclerView.Adapter<RankingBeerAdapter.
         /*Glide.with(holder.itemView)
                 .load(arrayList.get(position).getProfile())
                 .into(holder.rImage);*/     //여기는 맥주 사진
-        holder.rName.setText(arrayList.get(position).getName());
-        holder.rCountry.setText(arrayList.get(position).getCountry());
+        holder.rName.setText(arrayList.get(position).getBeerName());
+        holder.rCountry.setText(arrayList.get(position).getBeerCountry());
         holder.rStyle.setText(arrayList.get(position).getStyle());
         holder.rRating.setText(String.valueOf(arrayList.get(position).getRating()));
     }

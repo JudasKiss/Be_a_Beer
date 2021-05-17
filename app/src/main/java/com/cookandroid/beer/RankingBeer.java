@@ -2,10 +2,10 @@ package com.cookandroid.beer;
 
 public class RankingBeer {
     //private String profile;
-    private String name;
-    private String country;
+    private String beerName;
+    private String beerCountry;
     private String style;
-    private int rating;
+    private float Rating;
 
    /* public String getProfile() {
         return profile;
@@ -15,20 +15,20 @@ public class RankingBeer {
         this.profile = profile;
     }*/
 
-    public String getName() {
-        return name;
+    public String getBeerName() {
+        return beerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBeerName(String beerName) {
+        this.beerName = beerName;
     }
 
-    public String getCountry() {
-        return country;
+    public String getBeerCountry() {
+        return beerCountry;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setBeerCountry(String beerCountry) {
+        this.beerCountry = beerCountry;
     }
 
     public String getStyle() {
@@ -39,12 +39,12 @@ public class RankingBeer {
         this.style = style;
     }
 
-    public int getRating() {
-        return rating;
+    public float getRating() {
+        return Rating;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
+    public void setRating(float Rating) {
+        this.Rating = Rating;
     }
 
     public RankingBeer(){
