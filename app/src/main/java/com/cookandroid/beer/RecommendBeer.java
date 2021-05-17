@@ -201,14 +201,9 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
             }
         });
 
-<<<<<<< Updated upstream
-        String userId = mAuth.getUid();
+
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-=======
 
-
-
->>>>>>> Stashed changes
         likeButton = (Button)findViewById(R.id.likeButton);
         likeButton.setOnClickListener(new View.OnClickListener() {
             @Override
