@@ -63,7 +63,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_recommend_beer);
 
         mPostRecyclerView = findViewById(R.id.main_recyclerview);
-        //test=findViewById(R.id.jebaltext);
+        test=findViewById(R.id.jebaltext);
 
 
 
@@ -326,7 +326,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
                 //String barcode="4066600601920";
                 for(DataSnapshot ds: snapshot.getChildren()){
                     if(ds.getKey().equals(barcode)){
-                        //test.setText(ds.getKey());
+                        test.setText(ds.getKey());
                         rDatabase=mDatabase.child(barcode).child("post");
                         rDatabase.addValueEventListener(new ValueEventListener() {
                             @Override
@@ -349,7 +349,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                test.setText("siballll");
             }
         });
 
