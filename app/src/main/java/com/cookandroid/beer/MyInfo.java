@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,11 +26,30 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class MyInfo extends AppCompatActivity {
     private DatabaseReference rDatabase;
-
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private DatabaseReference  mDatabase = FirebaseDatabase.getInstance().getReference();
+    private TextView nickname;
+    private String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_info);
+
+        nickname = findViewById(R.id.nameView);
+
+        rDatabase = mDatabase.child("User").child(mAuth.getUid());
+        rDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                name=String.valueOf(snapshot.child("name").getValue());
+                nickname.setText(name);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         //Initialize And Assign Variable
         BottomNavigationView bottomNabvigationView = findViewById(R.id.bottom_navigation);
