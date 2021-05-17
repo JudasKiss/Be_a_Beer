@@ -13,8 +13,7 @@
         android:id="@+id/rImage"
         android:layout_width="100dp"
         android:layout_height="97dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/beer" />
+        android:layout_marginRight="10dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="269dp"
