@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +32,7 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 
 
-public class KindsRecommend extends AppCompatActivity {
+public class like extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -39,16 +40,14 @@ public class KindsRecommend extends AppCompatActivity {
     private ArrayList<Beer> arrayList;
     private FirebaseDatabase database;
     private DatabaseReference rDatabase;
-
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kinds_recommend);
+        setContentView(R.layout.activity_like);
 
-        Intent intent = getIntent();
-        String barcode = intent.getStringExtra("barcode");
         recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         layoutManager=new LinearLayoutManager(this);
@@ -88,14 +87,14 @@ public class KindsRecommend extends AppCompatActivity {
 
         database=FirebaseDatabase.getInstance();
         rDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
-        rDatabase.child(barcode).addValueEventListener(new ValueEventListener() {
+        rDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
-                    String data = String.valueOf(snapshot.child("style").getValue());
+                    String userId = mAuth.getUid();
                     Query query3 = FirebaseDatabase.getInstance().getReference("Beer")
-                            .orderByChild("style")
-                            .equalTo(data);
+                            .orderByChild(userId)
+                            .equalTo("1");
 
 
                     query3.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -137,7 +136,6 @@ public class KindsRecommend extends AppCompatActivity {
                                     }
                                 });
                                 arrayList.add(beer); //담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
-
                             }
                             adapter.notifyDataSetChanged(); //리스트 저장 및 새로고침
                         }
@@ -212,7 +210,6 @@ public class KindsRecommend extends AppCompatActivity {
     private void startRecommendActivity(String barcode){
         Intent intent = new Intent(this, RecommendBeer.class);
         intent.putExtra("barcode", barcode);
-        //intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 

@@ -64,6 +64,7 @@ public class MyInfo extends AppCompatActivity {
         });
 
         Button logout2 = (Button)findViewById(R.id.logout2);
+        Button btn = (Button)findViewById(R.id.bookmarkButton);
 
         logout2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +73,17 @@ public class MyInfo extends AppCompatActivity {
                     case R.id.logout2:
                         FirebaseAuth.getInstance().signOut();
                         startMainActivity();
+                        break;
+                }
+            }
+        });
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch(v.getId()){
+                    case R.id.bookmarkButton:
+                        startLikeActivity();
                         break;
                 }
             }
@@ -133,6 +145,12 @@ public class MyInfo extends AppCompatActivity {
 
     private void startDBexampleActivity(){
         Intent intent = new Intent(this, DBexample.class);
+        intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    private void startLikeActivity(){
+        Intent intent = new Intent(this, like.class);
         intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

@@ -34,13 +34,14 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RecommendBeer extends AppCompatActivity implements View.OnClickListener {
     Button likeButton;
     Button button;
     Button button2;
-    Button button3;
     private TextView test;
     private DatabaseReference rDatabase;
     private DatabaseReference mDatabase;
@@ -196,14 +197,19 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
                 ratingTextView.setText(""+rating);
             }
         });
+
+        String userId = mAuth.getUid();
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         likeButton = (Button)findViewById(R.id.likeButton);
         likeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(likeState){
                     likeButton.setBackgroundResource(R.drawable.ic_thumb_up_selected);
+                    rootRef.child("Beer").child(barcode).child(userId).setValue("1");
                 }else{
                     likeButton.setBackgroundResource(R.drawable.ic_thumb_up);
+                    rootRef.child("Beer").child(barcode).child(userId).setValue("0");
                 }
 
                 likeState=!likeState;

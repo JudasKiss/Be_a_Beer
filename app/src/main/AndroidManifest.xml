@@ -21,7 +21,7 @@
         <activity android:name=".KindsRecommend" />
         <activity android:name=".NationRecommend" />
         <activity android:name=".RecommendBeer" />
-        <activity android:name=".User" />
+        <activity android:name=".like" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainbeerActivity" />
         <activity
