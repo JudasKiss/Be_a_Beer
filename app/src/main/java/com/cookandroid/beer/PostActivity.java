@@ -1,5 +1,6 @@
 package com.cookandroid.beer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -53,12 +54,14 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
 
     public void onClick(View view) {
         if(mAuth.getCurrentUser()!=null){
+            Intent intent = getIntent();
+            String barcode = intent.getStringExtra("barcode");
             Map<String,Object> data = new HashMap<>();
             data.put(FirebaseID.title,mTitle.getText().toString());
             data.put(FirebaseID.contents,mContents.getText().toString());
             data.put(FirebaseID.name,name);
             userId = mAuth.getUid();
-            mDatabase.child("Beer").child("4066600601920").child("post").child(userId).setValue(data);
+            mDatabase.child("Beer").child(barcode).child("post").child(userId).setValue(data);
             finish();
         }
     }

@@ -40,6 +40,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
     Button likeButton;
     Button button;
     Button button2;
+    Button button3;
     private TextView test;
     private DatabaseReference rDatabase;
     private DatabaseReference mDatabase;
@@ -220,6 +221,11 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
         intent.putExtra("barcode", barcode);
         startActivity(intent);
     }
+    private void startPostActivity(String barcode){
+        Intent intent = new Intent(this, PostActivity.class);
+        intent.putExtra("barcode", barcode);
+        startActivity(intent);
+    }
     private void scanCode(){
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setCaptureActivity(CaptureAct.class);
@@ -303,13 +309,15 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
         super.onStart();
         mDatas = new ArrayList<>();
         uId = mAuth.getUid();
+        Intent intent = getIntent();
+        String barcode = intent.getStringExtra("barcode");
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mDatas.clear();
-                String barcode="4066600601920";
+                //String barcode="4066600601920";
                 for(DataSnapshot ds: snapshot.getChildren()){
                     if(ds.getKey().equals(barcode)){
                         test.setText(ds.getKey());
@@ -343,7 +351,9 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        startActivity(new Intent(this,PostActivity.class));
+        Intent intent = getIntent();
+        String barcode = intent.getStringExtra("barcode");
+        startPostActivity(barcode);
     }
 
 
