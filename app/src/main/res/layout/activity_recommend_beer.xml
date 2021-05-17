@@ -83,14 +83,6 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/jebaltext"
-                        android:layout_width="71dp"
-                        android:layout_height="46dp"
-                        android:text="TextView"
-                        tools:layout_editor_absoluteX="25dp"
-                        tools:layout_editor_absoluteY="90dp" />
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
