@@ -45,6 +45,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
     private TextView test;
     private DatabaseReference rDatabase;
     private DatabaseReference mDatabase;
+    float sum = 0;
     private String uId;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -188,18 +189,26 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
             }
         });
 
-
+        DatabaseReference rankRef = FirebaseDatabase.getInstance().getReference();
+        String userId = mAuth.getUid();
         RatingBar ratingBar = (RatingBar)findViewById(R.id.ratingBar);
         TextView ratingTextView= (TextView)findViewById(R.id.ratingTextView);
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 ratingTextView.setText(""+rating);
+                rankRef.child("User").child(userId).child("rating").child(barcode).setValue(rating);
             }
         });
 
+<<<<<<< Updated upstream
         String userId = mAuth.getUid();
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+=======
+
+
+
+>>>>>>> Stashed changes
         likeButton = (Button)findViewById(R.id.likeButton);
         likeButton.setOnClickListener(new View.OnClickListener() {
             @Override

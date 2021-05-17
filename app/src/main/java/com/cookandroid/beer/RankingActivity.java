@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -117,6 +118,8 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
                 Log.e("RankingActivity", String.valueOf(error.toException())); //에러문 출력
             }
         });
+
+
 
         adapter = new RankingBeerAdapter(arrayList, this);
         recyclerView.setAdapter(adapter); //리사이클러뷰에 어댑터 연결
