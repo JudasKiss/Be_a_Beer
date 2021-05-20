@@ -34,9 +34,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class RecommendBeer extends AppCompatActivity implements View.OnClickListener {
     Button likeButton;
@@ -45,6 +43,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
     private TextView test;
     private DatabaseReference rDatabase;
     private DatabaseReference mDatabase;
+    private DatabaseReference dataRef;
     float sum = 0;
     private String uId;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -62,12 +61,21 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend_beer);
-
+        Intent intent = getIntent();
+        String barcode = intent.getStringExtra("barcode");
         mPostRecyclerView = findViewById(R.id.main_recyclerview);
         //test=findViewById(R.id.jebaltext);
 
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
+        findViewById(R.id.main_delete_edit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                    dataRef = mDatabase.child(barcode).child("post").child(mAuth.getUid());
+                    dataRef.removeValue();
 
+            }
+        });
         findViewById(R.id.main_post_edit).setOnClickListener(this);
         //Initialize And Assign Variable
         BottomNavigationView bottomNabvigationView = findViewById(R.id.bottom_navigation);
@@ -103,8 +111,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
 
         button=(Button) findViewById(R.id.button);
         button2=(Button) findViewById(R.id.button2);
-        Intent intent = getIntent();
-        String barcode = intent.getStringExtra("barcode");
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
