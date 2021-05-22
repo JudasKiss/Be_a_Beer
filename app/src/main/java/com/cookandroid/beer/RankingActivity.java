@@ -28,6 +28,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
 import java.util.ArrayList;
 
 public class RankingActivity extends AppCompatActivity implements View.OnClickListener{
@@ -107,6 +111,37 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
                 arrayList.clear(); // 기존 배열리스트가 존재하지 않게 초기화
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){ //반복문으로 데이터 List를 추출해냄
                     RankingBeer RankingBeer = snapshot.getValue(com.cookandroid.beer.RankingBeer.class); //만들어뒀던 RankingBeer 객체에 데이터를 담는다.
+                    RankingBeer.setCode(snapshot.getKey());
+                    String barcode = snapshot.getKey();
+                    rDatabase = FirebaseDatabase.getInstance().getReference().child("Beer");
+                    rDatabase.child(barcode).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.exists()){
+                                String data = String.valueOf(snapshot.child("Code").getValue());
+                                String beerUrltest = "https://www.wine21.com/13_search/beer_view.html?Idx=";
+                                String beerUrl = beerUrltest.concat(data);
+                                new Thread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        try{
+                                            Document doc = Jsoup.connect(beerUrl).timeout(6000).get();
+                                            Elements image = doc.select(".column_detail1").select("div.thumb");
+                                            String url = image.select("img").attr("src");
+                                            RankingBeer.setUrl(url);
+                                        }catch (Exception ex){}
+                                    }
+                                }).start();
+                            }
+                            else{
+                                //바코드 없을 때 오류메세지
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                     arrayList.add(0,RankingBeer); //담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
                 }
                 adapter.notifyDataSetChanged(); //리스트 저장 및 새로고침

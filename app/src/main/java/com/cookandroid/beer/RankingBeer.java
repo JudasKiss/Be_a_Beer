@@ -6,6 +6,8 @@ public class RankingBeer {
     private String beerCountry;
     private String style;
     private float Rating;
+    private String url;
+    private String code;
 
    /* public String getProfile() {
         return profile;
@@ -45,6 +47,22 @@ public class RankingBeer {
 
     public void setRating(float Rating) {
         this.Rating = Rating;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public RankingBeer(){
