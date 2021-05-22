@@ -28,12 +28,13 @@
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="36dp"
-                    android:layout_marginEnd="152dp"
-                    android:layout_marginRight="152dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="288dp"
+                    android:layout_marginRight="288dp"
                     android:text="내정보"
                     android:textColor="@color/yellow"
                     android:textSize="40dp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,62 +51,75 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/bookmarkButton"
-                    android:layout_width="150dp"
-                    android:layout_height="110dp"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginLeft="28dp"
-                    android:layout_marginBottom="88dp"
+                    android:layout_width="275dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginBottom="20dp"
                     android:background="@drawable/round_corner"
-                    android:text="즐겨찾기"
+                    android:text="즐겨찾기                                >"
                     android:textColor="@color/yellow"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/historyButton"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/historyButton"
-                    android:layout_width="150dp"
-                    android:layout_height="110dp"
-                    android:layout_marginEnd="28dp"
-                    android:layout_marginRight="28dp"
-                    android:layout_marginBottom="88dp"
+                    android:layout_width="275dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginBottom="20dp"
                     android:background="@drawable/round_corner"
-                    android:text="히스토리"
+                    android:text="히스토리                                >"
                     android:textColor="@color/yellow"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/logout2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.816"
-                    app:layout_constraintStart_toEndOf="@+id/bookmarkButton" />
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/nameView"
                     android:layout_width="164dp"
                     android:layout_height="41dp"
-                    android:layout_marginTop="56dp"
+                    android:layout_marginTop="40dp"
                     android:text="TextView"
                     android:textColor="#FFEB3B"
                     android:textSize="30sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.692"
+                    app:layout_constraintHorizontal_bias="0.587"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/logout2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_width="275dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginBottom="33dp"
                     android:background="@drawable/round_corner"
-                    android:text="로그아웃"
+                    android:text="로그아웃                                >"
                     android:textColor="@color/yellow"
+                    android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintBottom_toTopOf="@+id/textView2"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="96dp"
+                    android:layout_marginLeft="96dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="버전 정보 v1.4 (53) / 최신 버전 v1.4"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
