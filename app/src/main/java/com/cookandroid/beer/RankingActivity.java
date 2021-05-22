@@ -49,14 +49,7 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
-        Button button = findViewById(R.id.button3);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), DBexample.class);
-                startActivity(intent);
-            }
-        });
+
         if(FirebaseAuth.getInstance().getCurrentUser() == null){
             startMainActivity();
         }
