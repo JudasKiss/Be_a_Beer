@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/item_beerView"
-    android:layout_width="wrap_content"
+    android:layout_width="140dp"
     android:layout_height="wrap_content"
     android:layout_marginStart="20dp"
     android:layout_marginLeft="20dp"
@@ -12,6 +12,8 @@
         android:id="@+id/mbImage"
         android:layout_width="80dp"
         android:layout_height="180dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp" />
 
     <TextView
@@ -19,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="회사"
+        android:text="시에라 네바다 브루잉 컴퍼니"
         android:textColor="@color/yellow" />
 
     <TextView
@@ -27,17 +29,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="이름"
+        android:text="시에라 네바다 페일 에일"
         android:textColor="@color/yellow" />
 
     <TextView
         android:id="@+id/mbRating"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
-        android:text="평점"
+        android:text="3.5"
         android:textColor="@color/yellow"
         android:textSize="20dp"
         android:textStyle="bold" />
