@@ -135,6 +135,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
 
 
         ImageView beerImage = findViewById(R.id.beerImage);
+        ImageView beerCountry = findViewById(R.id.beerCountry);
         TextView beerTitleText = findViewById(R.id.beerTitleText);
         TextView beerCompanyText = findViewById(R.id.beerCompanyText);
         TextView beerABVText = findViewById(R.id.beerABVText);
@@ -155,6 +156,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
                             try{
                                 Document doc = Jsoup.connect(beerUrl).timeout(6000).get();
                                 Elements image = doc.select(".column_detail1").select("div.thumb");
+                                Elements country = doc.select(".column_detail2").select(".cnt").select(".price").select("span.flag");
                                 Elements name = doc.select(".column_detail2").select(".cnt").select("h4");
                                 Element company  = doc.select(".column_detail2").select(".wine_info").select(".winery").select("span").get(0);
                                 Element ABV = doc.select(".column_detail2").select(".wine_info").select("dd").get(3);
@@ -163,6 +165,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
                                 Element Remark = doc.select(".column_detail2").select(".wine_info").select("dd").get(13);
 
                                 String url = image.select("img").attr("src");
+                                String url2= country.select("img").attr("src");
                                 product.setBeerTitle(name.text());
                                 product.setBeerCompany(company.text());
                                 product.setBeerABV(ABV.text());
@@ -170,6 +173,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
                                 product.setBeerRemark(Remark.text());
                                 product.setBeerStyle(Style.text());
                                 product.setImageUrl(url);
+                                product.setImageUrl2(url2);
                             }catch (Exception ex){}
                             runOnUiThread(new Runnable() {
                                 @Override
@@ -180,9 +184,8 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
                                     beerIBUText.setText(product.getBeerIBU());
                                     beerRemarkText.setText(product.getBeerRemark());
                                     beerStyleText.setText(product.getBeerStyle());
-                                    Picasso.get()
-                                            .load(product.getImageUrl())
-                                            .into(beerImage);
+                                    Picasso.get().load(product.getImageUrl()).into(beerImage);
+                                    Picasso.get().load(product.getImageUrl2()).into(beerCountry);
                                 }
 
                             });

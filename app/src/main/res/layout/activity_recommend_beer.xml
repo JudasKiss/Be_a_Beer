@@ -30,6 +30,16 @@
 
 
                     <ImageView
+                        android:id="@+id/beerCountry"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="132dp"
+                        android:layout_marginEnd="45dp"
+                        android:layout_marginRight="45dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
                         android:id="@+id/beerImage"
                         android:layout_width="191dp"
                         android:layout_height="263dp"

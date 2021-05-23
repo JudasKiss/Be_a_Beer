@@ -20,6 +20,7 @@
         android:id="@+id/mbCompany"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="시에라 네바다 브루잉 컴퍼니"
         android:textColor="@color/yellow" />
@@ -30,7 +31,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="시에라 네바다 페일 에일"
-        android:textColor="@color/yellow" />
+        android:textColor="@color/yellow"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/mbRating"
