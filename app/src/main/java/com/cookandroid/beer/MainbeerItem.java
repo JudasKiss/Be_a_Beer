@@ -5,12 +5,22 @@ public class MainbeerItem {
     String mbName;
     String mbRating;
     int mbImage;
+    String code;
 
-    public MainbeerItem(String mbCompany, String mbName, String mbRating, int mbImage) {
+    public MainbeerItem(String mbCompany, String mbName, String mbRating, int mbImage, String code) {
         this.mbCompany = mbCompany;
         this.mbName = mbName;
         this.mbRating = mbRating;
-        this.mbImage= mbImage;
+        this.mbImage = mbImage;
+        this.code = code;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getMbCompany() {
