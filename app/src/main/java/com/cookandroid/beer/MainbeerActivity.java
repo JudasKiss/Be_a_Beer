@@ -70,65 +70,58 @@ public class MainbeerActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
-        //1번
+        //미국
         recyclerView = findViewById(R.id.recyclerView);
         adapter = new MainbeerAdapter(getApplicationContext());
-        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
-        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
-        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
-        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
-        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
-        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
-        adapter.addItem(new MainbeerItem("하이네켄","하이네켄","3.1",R.drawable.heineken));
+        adapter.addItem(new MainbeerItem("ABInbev","버드와이저","2.8",R.drawable.bud));
+        adapter.addItem(new MainbeerItem("시에라 네바다 브루잉","시에라 네바다 페일 에일","3.9",R.drawable.nevada));
+        adapter.addItem(new MainbeerItem("밸러스트 포인트 브루잉 컴퍼니","스컬핀 IPA","4.6",R.drawable.sculpin));
+        adapter.addItem(new MainbeerItem("배어리퍼블릭 브루잉 컴퍼니","레이서 5","4.9",R.drawable.racer));
+        adapter.addItem(new MainbeerItem("구스 아일랜드 비어","구스 아일랜스 소피","3.7",R.drawable.sofie));
+        adapter.addItem(new MainbeerItem("뉴 벨지움 브루잉 컴퍼니","뉴 벨지움 팻 타이어","4.2",R.drawable.fat));
+        adapter.addItem(new MainbeerItem("보스톤 비어 컴퍼니","사무엘 아담스 보스턴 라거","3.5",R.drawable.samuel));
         recyclerView.setAdapter(adapter);
 
-        //2번
+        //벨기에
         recyclerView2 = findViewById(R.id.recyclerView2);
         LinearLayoutManager layoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
         recyclerView2.setLayoutManager(layoutManager2);
         adapter2 = new MainbeerAdapter(getApplicationContext());
-        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
-        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
-        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
-        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
-        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
-        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
-        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
-        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
-        adapter2.addItem(new MainbeerItem("버드와이저","버드와이저","2.5",R.drawable.bud));
+        adapter2.addItem(new MainbeerItem("ABInbev","스텔라 아르투아","3.5",R.drawable.stella));
+        adapter2.addItem(new MainbeerItem("브라세리 듀퐁","본 뵈","4.4",R.drawable.bon));
+        adapter2.addItem(new MainbeerItem("듀벨 무르트가트","듀벨","4.0",R.drawable.duvel));
+        adapter2.addItem(new MainbeerItem("분 브루어리","괴즈 분","4.5",R.drawable.boon));
+        adapter2.addItem(new MainbeerItem("브로어리 디 아슈프","라 쇼페","3.6",R.drawable.la));
+        adapter2.addItem(new MainbeerItem("페어해게","듀체스 드 브르고뉴","4.0",R.drawable.duchess));
+        adapter2.addItem(new MainbeerItem("베스트말러 브루어리","베스트말러 트리펠","3.8",R.drawable.tripel));
         recyclerView2.setAdapter(adapter2);
 
-        //3번
+        //대한민국
         recyclerView3 = findViewById(R.id.recyclerView3);
         LinearLayoutManager layoutManager3 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
         recyclerView3.setLayoutManager(layoutManager3);
         adapter3 = new MainbeerAdapter(getApplicationContext());
-        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
-        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
-        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
-        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
-        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
-        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
-        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
-        adapter3.addItem(new MainbeerItem("파울라너","파울라너","4.8",R.drawable.paul));
+        adapter3.addItem(new MainbeerItem("플레이그라운드 브루어리","미스트레스 사워 에일","3.7",R.drawable.sour));
+        adapter3.addItem(new MainbeerItem("세븐브로이맥주","강서 마일드 에일","3.2",R.drawable.gangseo));
+        adapter3.addItem(new MainbeerItem("제주맥주","제주 펠롱 에일","3.4",R.drawable.jeju));
+        adapter3.addItem(new MainbeerItem("화수브루어리","화수 브루어리 바이젠","3.9",R.drawable.whasoo));
+        adapter3.addItem(new MainbeerItem("코리아크래프트브루어리","아크 브라운","3.8",R.drawable.ark));
+        adapter3.addItem(new MainbeerItem("스퀴즈 브루어리","말표 맥주","3.2",R.drawable.malpyo));
+        adapter3.addItem(new MainbeerItem("플래티넘 크래프트 비어","플래티넘 페일 에일","3.4",R.drawable.platinum));
         recyclerView3.setAdapter(adapter3);
 
-        //4번
+        //독일
         recyclerView4 = findViewById(R.id.recyclerView4);
         LinearLayoutManager layoutManager4 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
         recyclerView4.setLayoutManager(layoutManager4);
         adapter4 = new MainbeerAdapter(getApplicationContext());
-        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
-        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
-        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
-        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
-        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
-        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
-        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
-        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
-        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
-        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
-        adapter4.addItem(new MainbeerItem("스텔라","스텔라 아르투아","4.3",R.drawable.stella));
+        adapter4.addItem(new MainbeerItem("레벤브로이","레벤브로이 오리지널","3.3",R.drawable.brau));
+        adapter4.addItem(new MainbeerItem("프라이빗 브루어리","가펠 쾰쉬","3.9",R.drawable.kolsch));
+        adapter4.addItem(new MainbeerItem("헬러브라우 트럼 GMBH","슈렝케를라 메르첸","4.3",R.drawable.marzen));
+        adapter4.addItem(new MainbeerItem("슈나이더 바이스","슈나이더 탭5 호펜바이세","4.7",R.drawable.tap5));
+        adapter4.addItem(new MainbeerItem("바이엔슈테판","바이엔슈테판 헤페바이스 비어","4.6",R.drawable.hefeweisen));
+        adapter4.addItem(new MainbeerItem("바이엔슈테판","바이엔슈테판 비투스","5.0",R.drawable.vitus));
+        adapter4.addItem(new MainbeerItem("파울라너","파울라너 헤페 바이스비어","3.8",R.drawable.paul));
         recyclerView4.setAdapter(adapter4);
     }
 
