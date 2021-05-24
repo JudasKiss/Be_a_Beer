@@ -14,12 +14,15 @@
         android:layout_marginStart="54dp"
         android:layout_marginLeft="54dp"
         android:layout_marginTop="29dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
         android:background="@drawable/round_corner"
         android:ems="10"
         android:hint="맥주 종류를 적어주세요."
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input" />
 
@@ -30,12 +33,15 @@
         android:layout_marginStart="54dp"
         android:layout_marginLeft="54dp"
         android:layout_marginTop="74dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
         android:background="@drawable/round_corner"
         android:ems="10"
         android:hint="맥주 이름을 적어주세요."
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,12 +52,15 @@
         android:layout_marginStart="54dp"
         android:layout_marginLeft="54dp"
         android:layout_marginTop="29dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
         android:background="@drawable/round_corner"
         android:ems="10"
         android:hint="국가를 적어주세요."
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input3" />
 
@@ -62,12 +71,15 @@
         android:layout_marginStart="54dp"
         android:layout_marginLeft="54dp"
         android:layout_marginTop="29dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginRight="58dp"
         android:background="@drawable/round_corner"
         android:ems="10"
         android:hint="바코드 숫자를 적어주세요."
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input2" />
 

@@ -63,8 +63,11 @@
                             android:layout_marginStart="3dp"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginEnd="66dp"
+                            android:layout_marginRight="66dp"
                             android:text="TOPPLING GOLIATH BREWING COMPANY"
                             android:textColor="@color/yellow"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/beerCountry"
                             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -75,6 +78,9 @@
                             android:layout_marginStart="32dp"
                             android:layout_marginLeft="32dp"
                             android:layout_marginTop="3dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginRight="3dp"
+                            app:layout_constraintEnd_toStartOf="@+id/beerCompanyText"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/beerStyleText" />
 
@@ -84,8 +90,11 @@
                             android:layout_height="70dp"
                             android:layout_marginStart="27dp"
                             android:layout_marginLeft="27dp"
+                            android:layout_marginEnd="27dp"
+                            android:layout_marginRight="27dp"
                             android:text=""
                             android:textColor="@color/yellow"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
@@ -109,12 +118,15 @@
                             android:layout_height="39dp"
                             android:layout_marginStart="52dp"
                             android:layout_marginLeft="52dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginRight="20dp"
                             android:indeterminate="false"
                             android:isIndicator="false"
                             android:max="5"
                             android:numStars="5"
                             android:rating="0.0"
                             android:stepSize="0.1"
+                            app:layout_constraintEnd_toStartOf="@+id/ratingTextView"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/beerCountry" />
 
@@ -139,10 +151,13 @@
                             android:layout_marginStart="32dp"
                             android:layout_marginLeft="32dp"
                             android:layout_marginTop="3dp"
+                            android:layout_marginEnd="28dp"
+                            android:layout_marginRight="28dp"
                             android:text="바이엔슈테판 헤페바이스 비어"
                             android:textColor="@color/white"
                             android:textSize="25dp"
                             android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/beerImage" />
 
@@ -209,17 +224,20 @@
                             android:id="@+id/button2"
                             android:layout_width="163dp"
                             android:layout_height="40dp"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginLeft="1dp"
                             android:layout_marginEnd="25dp"
                             android:layout_marginRight="25dp"
                             android:layout_marginBottom="5dp"
+
                             android:background="@drawable/round_corner5"
                             android:text="종류별 맥주추천"
-
                             android:textColor="@color/yellow"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent" />
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageView4" />
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/button"
@@ -227,12 +245,15 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="25dp"
                             android:layout_marginLeft="25dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginRight="3dp"
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/round_corner5"
                             android:text="국가별 맥주추천"
                             android:textColor="@color/yellow"
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imageView4"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:textStyle="bold" />
 
