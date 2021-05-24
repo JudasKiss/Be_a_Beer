@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.DatePicker;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -56,10 +58,12 @@ public class NationRecommend extends AppCompatActivity {
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         arrayList=new ArrayList<>();
+        ImageView nationFlag = findViewById(R.id.nationFlag);
 
         //Initialize And Assign Variable
         BottomNavigationView bottomNabvigationView = findViewById(R.id.bottom_navigation);
         bottomNabvigationView.setSelectedItemId(R.id.myinfo);
+        BeerProduct product = new BeerProduct();
 
         bottomNabvigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -99,7 +103,6 @@ public class NationRecommend extends AppCompatActivity {
                             .orderByChild("beerCountry")
                             .equalTo(data);
 
-
                     query3.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -124,8 +127,20 @@ public class NationRecommend extends AppCompatActivity {
                                                         Document doc = Jsoup.connect(beerUrl).timeout(6000).get();
                                                         Elements image = doc.select(".column_detail1").select("div.thumb");
                                                         String url = image.select("img").attr("src");
+
+                                                        Elements countryImg = doc.select(".column_detail2").select(".cnt").select(".price").select("span.flag");
+                                                        String url2= countryImg.select("img").attr("src");
+
+
                                                         beer.setUrl(url);
+                                                        product.setImageUrl2(url2);
                                                     }catch (Exception ex){}
+                                                    runOnUiThread(new Runnable() {
+                                                        @Override
+                                                        public void run() {
+                                                            Picasso.get().load(product.getImageUrl2()).into(nationFlag);
+                                                        }
+                                                    });
                                                 }
                                             }).start();
                                         }

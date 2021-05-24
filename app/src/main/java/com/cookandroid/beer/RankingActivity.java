@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SimpleItemAnimator;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -86,7 +87,6 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
                 return false;
             }
         });
-
 
         recyclerView = findViewById(R.id.rRecyclerView); //아이디 연결
         recyclerView.setHasFixedSize(true); // 리사이클러뷰 기존 성능 강화
