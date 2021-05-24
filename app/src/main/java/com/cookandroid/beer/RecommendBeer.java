@@ -161,6 +161,8 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     data = String.valueOf(snapshot.child("Code").getValue());
+                    String ne = String.valueOf(snapshot.child("beerEname").getValue());
+                    readData(ne);
                     beerUrl = beerUrltest.concat(data);
                     new Thread(new Runnable() {
                         @Override
@@ -177,9 +179,6 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
                                 Element Style = doc.select(".column_detail2").select(".wine_info").select("dd").get(2);
                                 Element Remark = doc.select(".column_detail2").select(".wine_info").select("dd").get(13);
 
-                                /*String beername = name2.text();
-                                beername = beername.replaceAll(" ","");
-                                readData(beername);*/
 
                                 String url = image.select("img").attr("src");
                                 String url2= country.select("img").attr("src");
@@ -301,7 +300,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
         }
         else if(max == a.getFifty()){
             //50대 선호
-
+            //beerRemarkText.setText("#남자 선호");
         }
         Float male = a.getMale();
         Float female = a.getFemale();
