@@ -88,10 +88,6 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        RecyclerView.ItemAnimator animator = recyclerView.getItemAnimator();
-        if (animator instanceof SimpleItemAnimator) {
-            ((SimpleItemAnimator) animator).setSupportsChangeAnimations(false);
-        }
         recyclerView = findViewById(R.id.rRecyclerView); //아이디 연결
         recyclerView.setHasFixedSize(true); // 리사이클러뷰 기존 성능 강화
         layoutManager = new LinearLayoutManager(this);
