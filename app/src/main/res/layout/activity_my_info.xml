@@ -28,14 +28,19 @@
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginLeft="13dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="288dp"
                     android:layout_marginRight="288dp"
+                    android:layout_marginBottom="43dp"
                     android:text="내정보"
                     android:textColor="@color/yellow"
                     android:textSize="40dp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/myImageView"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
@@ -45,7 +50,12 @@
                     android:layout_marginStart="29dp"
                     android:layout_marginLeft="29dp"
                     android:layout_marginTop="116dp"
+                    android:layout_marginEnd="23dp"
+                    android:layout_marginRight="23dp"
+                    android:layout_marginBottom="216dp"
                     android:src="@drawable/user1"
+                    app:layout_constraintBottom_toTopOf="@+id/bookmarkButton"
+                    app:layout_constraintEnd_toStartOf="@+id/nameView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,28 +67,9 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginEnd="30dp"
                     android:layout_marginRight="30dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="23dp"
                     android:background="@drawable/round_corner"
                     android:text="즐겨찾기                                          >"
-                    android:textColor="@color/yellow"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/historyButton"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.516"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/historyButton"
-                    android:layout_width="320dp"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginBottom="30dp"
-                    android:background="@drawable/round_corner"
-                    android:text="히스토리                                          >"
                     android:textColor="@color/yellow"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -124,10 +115,13 @@
                     android:layout_height="20dp"
                     android:layout_marginStart="96dp"
                     android:layout_marginLeft="96dp"
+                    android:layout_marginEnd="102dp"
+                    android:layout_marginRight="102dp"
                     android:layout_marginBottom="16dp"
                     android:text="버전 정보 v1.4 (53) / 최신 버전 v1.4"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
