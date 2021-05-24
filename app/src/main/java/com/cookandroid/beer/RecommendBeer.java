@@ -17,6 +17,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -50,6 +52,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
     private TextView test;
     private DatabaseReference rDatabase;
     private DatabaseReference mDatabase;
+    private DatabaseReference kDatabase;
     private DatabaseReference rankRef;
     private DatabaseReference dataRef;
 
@@ -72,6 +75,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_recommend_beer);
         Intent intent = getIntent();
         String barcode = intent.getStringExtra("barcode");
+
 
 
 
@@ -173,9 +177,9 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
                                 Element Style = doc.select(".column_detail2").select(".wine_info").select("dd").get(2);
                                 Element Remark = doc.select(".column_detail2").select(".wine_info").select("dd").get(13);
 
-                                String beername = name2.text();
+                                /*String beername = name2.text();
                                 beername = beername.replaceAll(" ","");
-                                readData(beername);
+                                readData(beername);*/
 
                                 String url = image.select("img").attr("src");
                                 String url2= country.select("img").attr("src");
@@ -252,6 +256,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
 
     private List<DataSample> dataSamples = new ArrayList<>();
     private void readData(String name) {
+        //TextView beerRemarkText = findViewById(R.id.beerRemarkText);
         //String name = "budweiser";
         int id = this.getResources().getIdentifier(name, "raw", this.getPackageName());
         InputStream is = getResources().openRawResource(id);
@@ -296,6 +301,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
         }
         else if(max == a.getFifty()){
             //50대 선호
+
         }
         Float male = a.getMale();
         Float female = a.getFemale();
@@ -308,7 +314,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
         else{
             //여자 선호
         }
-        //Log.d("Activity", "Just created: " + t);
+        //Log.d("Activity", "Just created: " + t);*/
     }
 
     private void startNationRecommendActivity(String barcode){

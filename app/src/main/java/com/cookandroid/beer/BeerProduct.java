@@ -11,6 +11,7 @@ public class BeerProduct {
     private String beerRemark;
     private String beerStyle;
     private String beerCountry;
+    private String beerEname;
 
     public String getBeerUrl() {
         return beerUrl;
@@ -18,6 +19,14 @@ public class BeerProduct {
 
     public void setBeerUrl(String beerUrl) {
         this.beerUrl = beerUrl;
+    }
+
+    public String getBeerEname() {
+        return beerEname;
+    }
+
+    public void setBeerEname(String beerEname) {
+        this.beerEname = beerEname;
     }
 
     public String getImageUrl() {
