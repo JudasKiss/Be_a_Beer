@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,10 +31,16 @@ public class MyInfo extends AppCompatActivity {
     private DatabaseReference  mDatabase = FirebaseDatabase.getInstance().getReference();
     private TextView nickname;
     private String name;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_info);
+
+        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+            startMainActivity();
+        }
 
         nickname = findViewById(R.id.nameView);
 

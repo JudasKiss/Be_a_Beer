@@ -50,9 +50,9 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
 
-        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+        /*if(FirebaseAuth.getInstance().getCurrentUser() == null){
             startMainActivity();
-        }
+        }*/
 
 
 
