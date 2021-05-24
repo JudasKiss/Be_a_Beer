@@ -228,13 +228,13 @@
                             android:layout_height="40dp"
                             android:layout_marginStart="25dp"
                             android:layout_marginLeft="25dp"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
                             android:background="@drawable/round_corner5"
                             android:text="국가별 맥주추천"
                             android:textColor="@color/yellow"
                             android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/beerRemarkText"
                             tools:textStyle="bold" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
