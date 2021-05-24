@@ -10,6 +10,7 @@ public class BeerProduct {
     private String beerIBU;
     private String beerRemark;
     private String beerStyle;
+    private String beerCountry;
 
     public String getBeerUrl() {
         return beerUrl;
@@ -80,5 +81,6 @@ public class BeerProduct {
     public void setBeerStyle(String beerStyle) {
         this.beerStyle = beerStyle;
     }
+
 
 }
