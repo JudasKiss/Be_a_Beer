@@ -33,7 +33,14 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.Buffer;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RecommendBeer extends AppCompatActivity implements View.OnClickListener {
@@ -43,9 +50,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
     private TextView test;
     private DatabaseReference rDatabase;
     private DatabaseReference mDatabase;
-
     private DatabaseReference rankRef;
-
     private DatabaseReference dataRef;
 
     float sum = 0;
@@ -67,6 +72,9 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_recommend_beer);
         Intent intent = getIntent();
         String barcode = intent.getStringExtra("barcode");
+
+
+
         mPostRecyclerView = findViewById(R.id.main_recyclerview);
         //test=findViewById(R.id.jebaltext);
 
@@ -158,11 +166,16 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
                                 Elements image = doc.select(".column_detail1").select("div.thumb");
                                 Elements country = doc.select(".column_detail2").select(".cnt").select(".price").select("span.flag");
                                 Elements name = doc.select(".column_detail2").select(".cnt").select("h4");
+                                Elements name2 = doc.select(".column_detail2").select(".cnt").select("name_en");
                                 Element company  = doc.select(".column_detail2").select(".wine_info").select(".winery").select("span").get(0);
                                 Element ABV = doc.select(".column_detail2").select(".wine_info").select("dd").get(3);
                                 Element IBU = doc.select(".column_detail2").select(".wine_info").select("dd").get(7);
                                 Element Style = doc.select(".column_detail2").select(".wine_info").select("dd").get(2);
                                 Element Remark = doc.select(".column_detail2").select(".wine_info").select("dd").get(13);
+
+                                String beername = name2.text();
+                                beername = beername.replaceAll(" ","");
+                                readData(beername);
 
                                 String url = image.select("img").attr("src");
                                 String url2= country.select("img").attr("src");
@@ -235,6 +248,69 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
         });
 
     }
+
+
+    private List<DataSample> dataSamples = new ArrayList<>();
+    private void readData(String name) {
+        //String name = "budweiser";
+        int id = this.getResources().getIdentifier(name, "raw", this.getPackageName());
+        InputStream is = getResources().openRawResource(id);
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(is, Charset.forName("UTF-8"))
+        );
+        String line = "";
+        try {
+            while((line = reader.readLine()) != null){
+                String[] tokens = line.split(",");
+                DataSample sample = new DataSample();
+                if((Float.parseFloat(tokens[0]) < 1) && (Float.parseFloat(tokens[0]) != 0)){
+                    sample.setTwenty(Float.parseFloat(tokens[0]));
+                    sample.setThirty(Float.parseFloat(tokens[1]));
+                    sample.setForty(Float.parseFloat(tokens[2]));
+                    sample.setFifty(Float.parseFloat(tokens[3]));
+                    sample.setMale(Float.parseFloat(tokens[5]));
+                    sample.setFemale(Float.parseFloat(tokens[6]));
+                    dataSamples.add(sample);
+                }
+                //Log.d("Activity", "Just created: " + sample);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        DataSample a = dataSamples.get(0);
+        float num [] = new float [4];
+        num[0] = a.getTwenty();
+        num[1] = a.getThirty();
+        num[2] = a.getForty();
+        num[3] = a.getFifty();
+        Arrays.sort(num);
+        Float max = num[3];
+        if(max == a.getTwenty()){
+            //20대 선호
+        }
+        else if(max == a.getThirty()){
+            //30대 선호
+        }
+        else if(max == a.getForty()){
+            //40대 선호
+        }
+        else if(max == a.getFifty()){
+            //50대 선호
+        }
+        Float male = a.getMale();
+        Float female = a.getFemale();
+        if(male > female){
+            //남자 선호
+        }
+        else if(male == female){
+            //동일 선호
+        }
+        else{
+            //여자 선호
+        }
+        //Log.d("Activity", "Just created: " + t);
+    }
+
     private void startNationRecommendActivity(String barcode){
         Intent intent = new Intent(this, NationRecommend.class);
         intent.putExtra("barcode", barcode);
