@@ -162,7 +162,7 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
                 if(snapshot.exists()){
                     data = String.valueOf(snapshot.child("Code").getValue());
                     String ne = String.valueOf(snapshot.child("beerEname").getValue());
-                    readData(ne);
+                    if (ne != "null") { readData(ne); }
                     beerUrl = beerUrltest.concat(data);
                     new Thread(new Runnable() {
                         @Override
