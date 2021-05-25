@@ -255,7 +255,8 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
 
     private List<DataSample> dataSamples = new ArrayList<>();
     private void readData(String name) {
-        //TextView beerRemarkText = findViewById(R.id.beerRemarkText);
+        TextView agelike = findViewById(R.id.agelike);
+        TextView sexlike = findViewById(R.id.sexlike);
         //String name = "budweiser";
         int id = this.getResources().getIdentifier(name, "raw", this.getPackageName());
         InputStream is = getResources().openRawResource(id);
@@ -291,27 +292,33 @@ public class RecommendBeer extends AppCompatActivity implements View.OnClickList
         Float max = num[3];
         if(max == a.getTwenty()){
             //20대 선호
+            agelike.setText("#20대 선호");
         }
         else if(max == a.getThirty()){
             //30대 선호
+            agelike.setText("#30대 선호");
         }
         else if(max == a.getForty()){
             //40대 선호
+            agelike.setText("#40대 선호");
         }
         else if(max == a.getFifty()){
             //50대 선호
-            //beerRemarkText.setText("#남자 선호");
+            agelike.setText("#50대 선호");
         }
         Float male = a.getMale();
         Float female = a.getFemale();
         if(male > female){
             //남자 선호
+            sexlike.setText("#남자 선호");
         }
         else if(male == female){
             //동일 선호
+            sexlike.setText("#남녀 선호");
         }
         else{
             //여자 선호
+            sexlike.setText("#여자 선호");
         }
         //Log.d("Activity", "Just created: " + t);*/
     }

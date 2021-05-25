@@ -71,13 +71,13 @@
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="0"
                                 android:background="@drawable/thumb_up"
-                                app:layout_constraintBottom_toTopOf="@+id/textView16"
+                                app:layout_constraintBottom_toTopOf="@+id/agelike"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/beerImage"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/textView16"
+                                android:id="@+id/agelike"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
@@ -92,7 +92,7 @@
                                 app:layout_constraintTop_toBottomOf="@+id/likeButton" />
 
                             <TextView
-                                android:id="@+id/textView17"
+                                android:id="@+id/sexlike"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="20dp"
@@ -104,7 +104,7 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.881"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+                                app:layout_constraintTop_toBottomOf="@+id/agelike" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
