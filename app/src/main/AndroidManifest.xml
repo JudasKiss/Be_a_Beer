@@ -15,7 +15,7 @@
         android:roundIcon="@drawable/beer_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Beer">
-        <activity android:name=".PostActivity"></activity>
+        <activity android:name=".PostActivity" />
         <activity android:name=".MyInfo" />
         <activity android:name=".DBexample" />
         <activity android:name=".KindsRecommend" />

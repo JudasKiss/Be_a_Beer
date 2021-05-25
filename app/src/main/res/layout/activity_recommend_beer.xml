@@ -53,51 +53,34 @@
                             <ImageView
                                 android:id="@+id/beerImage"
                                 android:layout_width="255dp"
-                                android:layout_height="346dp"
+                                android:layout_height="330dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.0" />
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/likeButton"
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
-                                android:layout_marginStart="9dp"
-                                android:layout_marginLeft="9dp"
-                                android:layout_marginTop="34dp"
-                                android:layout_marginEnd="4dp"
-                                android:layout_marginRight="4dp"
-                                android:layout_weight="0"
-                                android:background="@drawable/thumb_up"
-                                app:layout_constraintBottom_toTopOf="@+id/agelike"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toEndOf="@+id/beerImage"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/agelike"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:background="@drawable/taeturi"
+                                android:layout_marginTop="200dp"
+                                android:background="@drawable/nameround"
                                 android:textColor="@color/black"
-                                android:textSize="25dp"
+                                android:textSize="23dp"
                                 android:textStyle="italic"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.896"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/likeButton" />
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/sexlike"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="20dp"
-                                android:background="@drawable/taeturi"
+                                android:background="@drawable/nameround"
                                 android:textColor="@color/black"
-                                android:textSize="25dp"
+                                android:textSize="23dp"
                                 android:textStyle="italic"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.881"
@@ -109,14 +92,15 @@
                             android:id="@+id/beerCompanyText"
                             android:layout_width="250dp"
                             android:layout_height="20dp"
-                            android:layout_marginStart="6dp"
-                            android:layout_marginLeft="6dp"
-                            android:layout_marginTop="11dp"
-                            android:layout_marginEnd="64dp"
-                            android:layout_marginRight="64dp"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="50dp"
+                            android:layout_marginRight="50dp"
                             android:text="TOPPLING GOLIATH BREWING COMPANY"
                             android:textColor="@color/yellow"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.428"
                             app:layout_constraintStart_toEndOf="@+id/beerCountry"
                             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -127,6 +111,10 @@
                             android:layout_marginStart="31dp"
                             android:layout_marginLeft="31dp"
                             android:layout_marginTop="4dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginRight="24dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.065"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/beerStyleText" />
 
@@ -170,6 +158,9 @@
                             android:numStars="5"
                             android:rating="0.0"
                             android:stepSize="0.1"
+                            app:layout_constraintBottom_toTopOf="@+id/beerRemarkText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/beerCompanyText" />
 
@@ -177,27 +168,28 @@
                             android:id="@+id/ratingTextView"
                             android:layout_width="65dp"
                             android:layout_height="40dp"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginEnd="93dp"
-                            android:layout_marginRight="93dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginRight="32dp"
                             android:text="0.0"
                             android:textColor="@color/white"
                             android:textSize="30dp"
                             android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toEndOf="@+id/ratingBar"
                             app:layout_constraintTop_toBottomOf="@+id/beerCompanyText" />
 
                         <TextView
                             android:id="@+id/beerTitleText"
-                            android:layout_width="351dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="32dp"
                             android:layout_marginLeft="32dp"
                             android:layout_marginTop="3dp"
-                            android:layout_marginEnd="28dp"
-                            android:layout_marginRight="28dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginRight="32dp"
                             android:text="바이엔슈테판 헤페바이스 비어"
                             android:textColor="@color/white"
                             android:textSize="25dp"
@@ -257,16 +249,16 @@
                             android:id="@+id/beerIBUText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="1dp"
-                            android:layout_marginEnd="129dp"
-                            android:layout_marginRight="129dp"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginTop="400dp"
+                            android:layout_marginEnd="100dp"
+                            android:layout_marginRight="100dp"
                             android:text="47"
                             android:textColor="@color/yellow"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/textView3"
-                            app:layout_constraintTop_toBottomOf="@+id/beerTitleText" />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/button2"
@@ -304,6 +296,18 @@
                             app:layout_constraintEnd_toStartOf="@+id/imageView4"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/likeButton"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="350dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/thumb_up"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
