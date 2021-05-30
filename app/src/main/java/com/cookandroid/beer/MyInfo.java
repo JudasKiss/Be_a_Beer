@@ -41,22 +41,22 @@ public class MyInfo extends AppCompatActivity {
         if(FirebaseAuth.getInstance().getCurrentUser() == null){
             startMainActivity();
         }
+        else{
+            rDatabase = mDatabase.child("User").child(mAuth.getUid());
+            rDatabase.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    name=String.valueOf(snapshot.child("name").getValue());
+                    nickname.setText(name);
+                }
 
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
         nickname = findViewById(R.id.nameView);
-
-        rDatabase = mDatabase.child("User").child(mAuth.getUid());
-        rDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                name=String.valueOf(snapshot.child("name").getValue());
-                nickname.setText(name);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
         //Initialize And Assign Variable
         BottomNavigationView bottomNabvigationView = findViewById(R.id.bottom_navigation);
