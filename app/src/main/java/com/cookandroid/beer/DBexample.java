@@ -1,9 +1,11 @@
 package com.cookandroid.beer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,12 +33,15 @@ public class DBexample extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dbexample);
 
+        Intent intent = getIntent();
+        String barcode = intent.getStringExtra("barcode");
+
         beername = findViewById(R.id.input);
         beercountry = findViewById(R.id.input2);
         beerstyle =  findViewById(R.id.input3);
         beerbarcode = findViewById(R.id.input4);
         btn_save = findViewById(R.id.btn);
-
+        beerbarcode.setText(barcode, TextView.BufferType.EDITABLE);
         //firebase 정의
         mDatabase = FirebaseDatabase.getInstance().getReference();
 

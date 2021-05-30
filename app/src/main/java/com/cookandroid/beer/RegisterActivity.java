@@ -99,7 +99,6 @@ public class RegisterActivity extends AppCompatActivity {
                                         userMap.put(FirebaseID.password,password);
                                         userMap.put(FirebaseID.documentId,userId);
                                         mDatabase.child("User").child(userId).setValue(userMap);
-                                        ;
                                         finish();
                                     } else {
                                         if(task.getException() != null){

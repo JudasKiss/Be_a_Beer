@@ -157,7 +157,7 @@ public class MainbeerActivity extends AppCompatActivity implements View.OnClickL
                             String value = dataSnapshot.getValue().toString();
                             startRecommendActivity(barcode);
                         }catch(NullPointerException e){
-                            showDialog();
+                            showDialog(result.getContents());
                         }
                     }
                     @Override
@@ -188,13 +188,14 @@ public class MainbeerActivity extends AppCompatActivity implements View.OnClickL
         startActivity(intent);
     }
 
-    private void startDBexampleActivity(){
+    private void startDBexampleActivity(String code){
         Intent intent = new Intent(this, DBexample.class);
-        intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("barcode", code);
+        //intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
-    private void showDialog(){
+    public void showDialog(String code){
         AlertDialog.Builder builder =new AlertDialog.Builder(this);
         builder.setMessage("저희 데이터에 없는 맥주네요ㅠㅠ 다른 사용자를 위해 맥주를 추가해주시겠어요?");
         builder.setTitle("죄송해요!");
@@ -205,7 +206,7 @@ public class MainbeerActivity extends AppCompatActivity implements View.OnClickL
         }).setNegativeButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                startDBexampleActivity();
+                startDBexampleActivity(code);
             }
         });
         AlertDialog dialog = builder.create();
